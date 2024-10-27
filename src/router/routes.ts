@@ -16,7 +16,7 @@ const routes: Array<RouteRecordRaw> = [
     },
     {
         path: "/",
-        redirect: "/app/home"
+        redirect: "/login"
     },
 
     {

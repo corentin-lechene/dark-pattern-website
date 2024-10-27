@@ -33,11 +33,11 @@ const error = ref('')
         <InputText v-model="password" label="Mot de passe" placeholder="***********"/>
       </div>
 
-      <Button class="w-full" label="Se connecter"/>
+      <Button class="w-full" label="Se connecter" @click="$router.push({name: 'Home'})"/>
 
       <div class="text-sm">
         <span class="mr-1 text-gray-800">Pas encore de compte ?</span>
-        <span class="text-blue-500" @click="$router.push('/register')">Inscrivez-vous</span>
+        <span class="text-blue-500" @click="$router.push({name: 'Register'})">Inscrivez-vous</span>
       </div>
 
       <div class="text-xs absolute text-center" style="bottom: 20px">

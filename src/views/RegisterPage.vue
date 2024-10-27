@@ -51,11 +51,11 @@ const error = ref('')
         </div>
       </div>
 
-      <Button class="w-full" label="S'inscrire"/>
+      <Button class="w-full" label="S'inscrire" @click="$router.push({name: 'Login'})"/>
 
       <div class="text-sm">
         <span class="mr-1 text-gray-800">Déjà un compte ?</span>
-        <span class="text-blue-500" @click="$router.push('/login')">Connectez-vous</span>
+        <span class="text-blue-500" @click="$router.push({name: 'Login'})">Connectez-vous</span>
       </div>
 
       <div class="text-xs absolute text-center" style="bottom: 20px">

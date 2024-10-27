@@ -24,7 +24,7 @@ onMounted(() => {
   if (videoRef.value) {
     videoRef.value.addEventListener("ended", () => {
       isFirstTime.value = false;
-      router.push({name: "Home"});
+      router.push({name: "Login"});
     });
   }
 
