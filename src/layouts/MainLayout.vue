@@ -13,7 +13,12 @@ const needBackButton = ref(['Product', 'Products', 'MyAccount', 'Payment', 'UnSu
 
 <template>
   <HeaderApp v-if="$route.name === 'Home'" logo-only/>
-  <HeaderApp v-else :back-btn="needBackButton.includes($route.name)" :title="$route.name"/>
+  <HeaderApp
+      v-else
+      :back-btn="needBackButton.includes($route.name)"
+      :shop-button="$route.name === 'Cart'"
+      :title="$route.name"
+  />
   <router-view></router-view>
   <NavBarBottom/>
 </template>

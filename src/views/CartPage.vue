@@ -24,14 +24,6 @@ const randomProduct = products[Math.floor(Math.random() * products.length)];
         />
       </div>
     </div>
-    <div class="px-4 py-2 fixed z-5" style="bottom: 10%; right: 35%">
-      <Button
-          class="w-full"
-          label="Valider le panier"
-          size="large"
-          @click="() => $router.push({name: 'Payment'})"
-      />
-    </div>
   </div>
 </template>
 
