@@ -1,0 +1,41 @@
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #d6d6d6;
+}
+
+#app {
+    flex: 1;
+}
+
+.vue-flow__controls {
+    border: 1px solid #FFFFFB
+}
+
+.basic-flow .vue-flow__controls .vue-flow__controls-button {
+    border: none;
+    border-right: 1px solid #eee
+}
+
+.basic-flow .vue-flow__controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center
+}
+
+.content {
+    padding-bottom: env(safe-area-inset-bottom);
+    overflow-y: scroll;
+}

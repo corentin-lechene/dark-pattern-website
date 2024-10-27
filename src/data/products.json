@@ -1,0 +1,162 @@
+[
+  {
+    "id": "1",
+    "name": "Laptop Pro",
+    "price": 1200,
+    "description": "High-performance laptop with 16GB RAM and 512GB SSD.",
+    "image": "https://picsum.photos/200/300",
+    "insurance": true
+  },
+  {
+    "id": "2",
+    "name": "Smartphone X",
+    "price": 899,
+    "description": "5G-enabled smartphone with a 6.5-inch display and 128GB storage.",
+    "image": "https://picsum.photos/200/300",
+    "insurance": true
+  },
+  {
+    "id": "3",
+    "name": "Wireless Earbuds",
+    "price": 150,
+    "description": "Noise-canceling wireless earbuds with 10-hour battery life.",
+    "image": "https://picsum.photos/200/300",
+    "insurance": true
+  },
+  {
+    "id": "4",
+    "name": "4K Monitor",
+    "price": 400,
+    "description": "Ultra HD 4K monitor with 27-inch display and HDR support.",
+    "image": "https://picsum.photos/200/300",
+    "insurance": true
+  },
+  {
+    "id": "5",
+    "name": "Gaming Chair",
+    "price": 300,
+    "description": "Ergonomic gaming chair with lumbar support and adjustable height.",
+    "image": "https://picsum.photos/200/300",
+    "insurance": true
+  },
+  {
+    "id": "6",
+    "name": "Mechanical Keyboard",
+    "price": 120,
+    "description": "RGB backlit mechanical keyboard with tactile switches.",
+    "image": "https://picsum.photos/200/300",
+    "insurance": true
+  },
+  {
+    "id": "7",
+    "name": "Bluetooth Speaker",
+    "price": 80,
+    "description": "Portable Bluetooth speaker with deep bass and 12-hour battery.",
+    "image": "https://picsum.photos/200/300",
+    "insurance": true
+  },
+  {
+    "id": "8",
+    "name": "Smart Watch",
+    "price": 200,
+    "description": "Fitness tracker and smart watch with heart rate monitoring.",
+    "image": "https://picsum.photos/200/300",
+    "insurance": true
+  },
+  {
+    "id": "9",
+    "name": "Digital Camera",
+    "price": 500,
+    "description": "Mirrorless digital camera with 24MP and 4K video recording.",
+    "image": "https://picsum.photos/200/300",
+    "insurance": true
+  },
+  {
+    "id": "10",
+    "name": "Electric Scooter",
+    "price": 450,
+    "description": "Foldable electric scooter with a top speed of 20 mph.",
+    "image": "https://picsum.photos/200/300",
+    "insurance": true
+  },
+  {
+    "id": "11",
+    "name": "Smart Home Hub",
+    "price": 100,
+    "description": "Voice-controlled smart home hub with smart assistant integration.",
+    "image": "https://picsum.photos/200/300",
+    "insurance": true
+  },
+  {
+    "id": "12",
+    "name": "Action Camera",
+    "price": 250,
+    "description": "Waterproof action camera with 4K resolution and image stabilization.",
+    "image": "https://picsum.photos/200/300",
+    "insurance": true
+  },
+  {
+    "id": "13",
+    "name": "VR Headset",
+    "price": 350,
+    "description": "Immersive virtual reality headset with 360-degree tracking.",
+    "image": "https://picsum.photos/200/300",
+    "insurance": true
+  },
+  {
+    "id": "14",
+    "name": "Wireless Charger",
+    "price": 40,
+    "description": "Fast wireless charging pad compatible with all Qi devices.",
+    "image": "https://picsum.photos/200/300",
+    "insurance": true
+  },
+  {
+    "id": "15",
+    "name": "Portable Projector",
+    "price": 300,
+    "description": "Compact projector with Full HD resolution and HDMI input.",
+    "image": "https://picsum.photos/200/300",
+    "insurance": true
+  },
+  {
+    "id": "16",
+    "name": "Smart Thermostat",
+    "price": 180,
+    "description": "Wi-Fi-enabled smart thermostat with energy-saving features.",
+    "image": "https://picsum.photos/200/300",
+    "insurance": true
+  },
+  {
+    "id": "17",
+    "name": "Noise Cancelling Headphones",
+    "price": 250,
+    "description": "Over-ear noise-canceling headphones with 20-hour battery life.",
+    "image": "https://picsum.photos/200/300",
+    "insurance": true
+  },
+  {
+    "id": "18",
+    "name": "Fitness Tracker",
+    "price": 60,
+    "description": "Lightweight fitness tracker with step counting and sleep monitoring.",
+    "image": "https://picsum.photos/200/300",
+    "insurance": true
+  },
+  {
+    "id": "19",
+    "name": "Smart Light Bulb",
+    "price": 20,
+    "description": "Color-changing smart light bulb with Wi-Fi control.",
+    "image": "https://picsum.photos/200/300",
+    "insurance": true
+  },
+  {
+    "id": "20",
+    "name": "Electric Toothbrush",
+    "price": 100,
+    "description": "Rechargeable electric toothbrush with multiple brushing modes.",
+    "image": "https://picsum.photos/200/300",
+    "insurance": true
+  }
+]
