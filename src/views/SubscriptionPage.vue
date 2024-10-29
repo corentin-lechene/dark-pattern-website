@@ -123,7 +123,7 @@ const openSubscriptionSettingsModal = ref(false);
             Vous êtes vraiment sur de vouloir partir ?
           </div>
           <div class="flex flex-column gap-4 justify-content-end">
-            <Button label="Je ne veux plus" severity="success"/>
+            <Button label="Je ne veux plus" severity="success" @click="openSubscriptionSettingsModal = false"/>
             <div>
               <Button label="Oui" severity="danger" size="small" @click="$router.push({name: 'UnSubscribe'})"/>
             </div>

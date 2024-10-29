@@ -48,7 +48,8 @@ const items = ref({
         <i class="pi pi-chevron-left"></i>
       </div>
       <div :class="{'text-center': backBtn}" class="w-full mr-6">{{ title in items ? items[title] : title }}</div>
-      <div v-if="shopButton" class="px-4 py-2 border-round-xl cursor-pointer bg-green-300" @click="$router.back()">
+      <div v-if="shopButton" class="px-4 py-2 border-round-xl cursor-pointer bg-green-300"
+           @click="$router.push({name: 'Payment'})">
         Acheter
       </div>
     </div>
