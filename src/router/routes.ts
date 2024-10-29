@@ -65,9 +65,24 @@ const routes: Array<RouteRecordRaw> = [
                 component: () => import("@/views/AccountPage.vue")
             },
             {
-                path: "my-account",
+                path: "notifications",
+                name: "Notifications",
+                component: () => import("@/views/NotificationsPage.vue")
+            },
+            {
+                path: "account/my",
                 name: "MyAccount",
                 component: () => import("@/views/MyAccount.vue")
+            },
+            {
+                path: "about",
+                name: "About",
+                component: () => import("@/views/AboutPage.vue")
+            },
+            {
+                path: "policy",
+                name: "Policy",
+                component: () => import("@/views/PolicyPage.vue")
             },
             {
                 path: 'products',

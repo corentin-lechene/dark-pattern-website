@@ -13,28 +13,28 @@ import AccountListItem from "@/components/AccountListItem.vue";
              style="border-radius: 100%"/>
       </div>
 
-      <div class="flex flex-column p-1 border-round-xl" style="background: rgba(214,227,255,0.75);">
-        <AccountListItem disabled icon="pi-pencil" label="Modifier mes informations"/>
+      <div class="cursor-pointer flex flex-column p-1 border-round-xl" style="background: rgba(214,227,255,0.75);">
+        <AccountListItem icon="pi-pencil" label="Modifier mes informations" @click="$router.push({name: 'MyAccount'})"/>
       </div>
 
 
       <div class="flex flex-column gap-2">
         <div class="text-xl">Préferences</div>
-        <div class="flex flex-column p-1 border-round-xl" style="background: rgba(214,227,255,0.75);">
+        <div class="cursor-pointer flex flex-column p-1 border-round-xl" style="background: rgba(214,227,255,0.75);">
           <AccountListItem icon="pi-cog" label="Compte" @click="$router.push({name: 'MyAccount'})"/>
-          <AccountListItem disabled icon="pi-bell" label="Notifications"/>
+          <AccountListItem icon="pi-bell" label="Notifications" @click="$router.push({name: 'Notifications'})"/>
         </div>
       </div>
 
       <div class="flex flex-column gap-2">
         <div class="text-xl">Condidentialité</div>
-        <div class="flex flex-column p-1 border-round-xl" style="background: rgba(214,227,255,0.75);">
-          <AccountListItem disabled icon="pi-key" label="Politique de confidentialité"/>
-          <AccountListItem disabled icon="pi-info-circle" label="À propos"/>
+        <div class="cursor-pointer flex flex-column p-1 border-round-xl" style="background: rgba(214,227,255,0.75);">
+          <AccountListItem icon="pi-key" label="Politique de confidentialité" @click="$router.push({name: 'Policy'})"/>
+          <AccountListItem icon="pi-info-circle" label="À propos" @click="$router.push({name: 'About'})"/>
         </div>
       </div>
 
-      <Button class="w-full" label="Réinitialiser" severity="danger"/>
+      <Button class="w-full" label="Recommencer l’expérience" severity="danger"/>
     </div>
   </div>
 </template>

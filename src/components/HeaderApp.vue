@@ -33,6 +33,7 @@ const items = ref({
   MyAccount: 'Mon compte',
   Payment: 'Paiement',
   PaymentSuccess: 'Paiement réussi',
+  Policy: 'Politique de confidentialité',
 })
 
 </script>

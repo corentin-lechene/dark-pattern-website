@@ -5,8 +5,8 @@ import {useRouter} from "vue-router";
 const router = useRouter();
 
 const videoRef = ref<HTMLVideoElement | null>(null);
-const isFirstTime = ref(true);
-const isStarted = ref(false);
+const isFirstTime = ref(false);
+const isStarted = ref(true);
 
 const startVideo = () => {
   if (videoRef.value) {

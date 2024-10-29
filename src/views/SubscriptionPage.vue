@@ -9,7 +9,6 @@ const cardCvc = ref<string>('');
 
 const hasSubscribed = ref(true);
 
-const openSubscriptionSettingsModal = ref(false);
 
 </script>
 
@@ -89,9 +88,6 @@ const openSubscriptionSettingsModal = ref(false);
     <div class="flex flex-column gap-2 px-4">
       <div class="flex justify-content-between align-items-center">
         <div class="text-2xl font-bold">Abonnement en ligne</div>
-        <div>
-          <i class="pi pi-cog text-success text-xs" @click="openSubscriptionSettingsModal = true"/>
-        </div>
       </div>
       <div class="text-lg">Vous avez souscrit à un abonnement en ligne.</div>
       <div class="text-sm">
@@ -100,37 +96,6 @@ const openSubscriptionSettingsModal = ref(false);
     </div>
 
     <ProductsForYou/>
-
-    <Dialog v-model:visible="openSubscriptionSettingsModal" class="m-4" header="Paramètres" modal style="width: 350px;">
-      <div class="flex flex-column gap-3" style="max-height: 290px;">
-        <div class="flex flex-column gap-2">
-          <div class="text-lg font-semibold">Gestion de votre abonnement</div>
-          <div class="text-sm">
-            Abonnement à 13,99€/mois.
-          </div>
-        </div>
-
-        <div class="flex flex-column gap-2">
-          <div class="text-lg">
-            Grâce à votre abonnement, vous avez accès à des produits exclusifs et des offres spéciales.
-          </div>
-        </div>
-
-        <div class="flex flex-column gap-2">
-          <div class="text-lg font-semibold">Vous souhaitez partir ? Ho non fait pas ça</div>
-          <div class="text-sm">
-            Notre abonnement a été fait pour vous. Vous être prioritaire pour les offres spéciales et les produits.
-            Vous êtes vraiment sur de vouloir partir ?
-          </div>
-          <div class="flex flex-column gap-4 justify-content-end">
-            <Button label="Je ne veux plus" severity="success" @click="openSubscriptionSettingsModal = false"/>
-            <div>
-              <Button label="Oui" severity="danger" size="small" @click="$router.push({name: 'UnSubscribe'})"/>
-            </div>
-          </div>
-        </div>
-      </div>
-    </Dialog>
   </div>
 </template>
 

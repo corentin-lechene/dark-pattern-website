@@ -7,7 +7,16 @@ import {ref} from "vue";
 
 dayjs.locale(localStorage.getItem('language') || 'fr');
 
-const needBackButton = ref(['Product', 'Products', 'MyAccount', 'Payment', 'UnSubscribe',]);
+const needBackButton = ref([
+  'Product',
+  'Products',
+  'MyAccount',
+  'Payment',
+  'UnSubscribe',
+  'Policy',
+  'About',
+  'Notifications',
+]);
 
 </script>
 
