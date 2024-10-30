@@ -1,11 +1,36 @@
 <script lang="ts" setup>
 
 import {ref} from "vue";
+import {useRouter} from "vue-router";
+import {NotificationsService} from "@/services/notifications.service";
+
+const router = useRouter()
 
 const email = ref('')
 const password = ref('')
 
 const error = ref('')
+
+function handleLogin() {
+  //todo remove this
+  // if (!email.value || !password.value) {
+  //   error.value = "Veuillez remplir tous les champs"
+  //   return
+  // }
+  //
+  // if(password.value.length < 8) {
+  //   error.value = "Le mot de passe doit contenir au moins 8 caractères"
+  //   return
+  // }
+
+  setTimeout(() => {
+    NotificationsService.show({
+      title: "Bienvenue",
+      message: "Venir découvrir nos produits à prix réduits !"
+    })
+  }, 5000)
+  router.push({name: 'Home'})
+}
 
 </script>
 
@@ -13,7 +38,7 @@ const error = ref('')
   <div class="flex justify-content-center align-items-center h-full w-full h-full relative">
 
     <div class="flex flex-column gap-4 justify-content-center align-items-center px-6">
-      <img alt="App Logo" class="w-3 h-3" src="@/assets/logo.jpg"/>
+      <img alt="App Logo" class="w-3 h-3" src="@/assets/logo.png"/>
       <div class="text-3xl">Connexion</div>
 
       <!-- Banner handle error     -->
@@ -33,7 +58,7 @@ const error = ref('')
         <InputText v-model="password" label="Mot de passe" placeholder="***********"/>
       </div>
 
-      <Button class="w-full" label="Se connecter" @click="$router.push({name: 'Home'})"/>
+      <Button class="w-full" label="Se connecter" @click="handleLogin()"/>
 
       <div class="text-sm">
         <span class="mr-1 text-gray-800">Pas encore de compte ?</span>

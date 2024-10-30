@@ -41,7 +41,7 @@ const items = ref({
 <template>
   <div class="flex w-full sticky top-0 p-3 bg-gray-50 border-gray-200 border-bottom-1 overflow-hidden relative z-5">
     <div v-if="logoOnly" class="flex gap-1 align-items-center">
-      <img alt="App Logo" class="w-2 h-2" src="@/assets/logo.jpg"/>
+      <img alt="App Logo" class="w-2 h-2" src="@/assets/logo.png"/>
       <div class="font-semibold text-xl">Appli</div>
     </div>
     <div v-else class="flex gap-3 align-items-center text-2xl w-full">

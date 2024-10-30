@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import {onMounted, ref} from "vue";
 import {useRouter} from "vue-router";
+import NotificationPopup from "@/components/NotificationPopup.vue";
 
 const router = useRouter();
 
@@ -35,6 +36,7 @@ onMounted(() => {
 <template>
   <div class="flex justify-content-center align-items-center h-full w-full relative">
     <div v-if="!isFirstTime" class="h-full w-full relative bg-white" style="max-width: 500px">
+      <NotificationPopup id="notificationRef"/>
       <router-view></router-view>
     </div>
     <div v-else

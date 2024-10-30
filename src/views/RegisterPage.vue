@@ -16,7 +16,7 @@ const error = ref('')
   <div class="flex justify-content-center align-items-center h-full w-full h-full relative">
 
     <div class="flex flex-column gap-4 justify-content-center align-items-center px-6">
-      <img alt="App Logo" class="w-3 h-3" src="@/assets/logo.jpg"/>
+      <img alt="App Logo" class="w-3 h-3" src="@/assets/logo.png"/>
       <div class="text-3xl">Inscription</div>
 
       <!-- Banner handle error     -->
