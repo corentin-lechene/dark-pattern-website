@@ -5,5 +5,7 @@ export interface User {
     email: string
     password: string
     hasSubscription: boolean
+    shareData: boolean
+    newsletter: boolean
     createdAt: Date
 }

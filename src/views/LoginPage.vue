@@ -3,11 +3,13 @@
 import {ref} from "vue";
 import {useRouter} from "vue-router";
 import {NotificationsService} from "@/services/notifications.service";
+import {useUserStore} from "@/stores/user.store";
 
 const router = useRouter()
+const userStore = useUserStore();
 
-const email = ref('')
-const password = ref('')
+const email = ref('x')
+const password = ref('xxxxxxxxx')
 
 const error = ref('')
 
@@ -23,13 +25,18 @@ function handleLogin() {
   //   return
   // }
 
-  setTimeout(() => {
-    NotificationsService.show({
-      title: "Bienvenue",
-      message: "Venir découvrir nos produits à prix réduits !"
-    })
-  }, 5000)
-  router.push({name: 'Home'})
+  try {
+    userStore.login(email.value, password.value);
+    setTimeout(() => {
+      NotificationsService.show({
+        title: "Bienvenue",
+        message: "Venir découvrir nos produits à prix réduits !"
+      })
+    }, 5000)
+    router.push({name: 'Home'})
+  } catch (e) {
+    error.value = e.message as string
+  }
 }
 
 </script>
@@ -43,7 +50,7 @@ function handleLogin() {
 
       <!-- Banner handle error     -->
       <div v-if="error" class="w-full bg-red-100 border-red-500 border-1 p-3 text-red-500 text-center border-round">
-        <i class="pi pi-exclamation-triangle"></i>
+        <i class="pi pi-exclamation-triangle mr-1"></i>
         <span>{{ error }}</span>
       </div>
 
@@ -62,7 +69,7 @@ function handleLogin() {
 
       <div class="text-sm">
         <span class="mr-1 text-gray-800">Pas encore de compte ?</span>
-        <span class="text-blue-500" @click="$router.push({name: 'Register'})">Inscrivez-vous</span>
+        <span class="cursor-pointer text-blue-500" @click="$router.push({name: 'Register'})">Inscrivez-vous</span>
       </div>
 
       <div class="text-xs absolute text-center" style="bottom: 20px">

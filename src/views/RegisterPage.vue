@@ -1,6 +1,11 @@
 <script lang="ts" setup>
 
 import {ref} from "vue";
+import {useUserStore} from "@/stores/user.store";
+import {useRouter} from "vue-router";
+
+const router = useRouter()
+const userStore = useUserStore();
 
 const email = ref('')
 const password = ref('')
@@ -9,6 +14,37 @@ const newsletter = ref(false)
 const shareData = ref(true)
 
 const error = ref('')
+
+function handleRegister() {
+  if (!email.value || !password.value) {
+    error.value = "Veuillez remplir tous les champs"
+    return
+  }
+
+  //todo add type=password in input
+  if (password.value.length < 8) {
+    error.value = "Le mot de passe doit contenir au moins 8 caractères"
+    return
+  }
+
+  if (!cgu.value) {
+    error.value = "Veuillez accepter les CGU"
+    return
+  }
+
+  try {
+    userStore.register(
+        email.value,
+        password.value,
+        !newsletter.value,
+        shareData.value
+    );
+
+    router.push({name: 'Login'})
+  } catch (e) {
+    error.value = e.message as string
+  }
+}
 
 </script>
 
@@ -21,7 +57,7 @@ const error = ref('')
 
       <!-- Banner handle error     -->
       <div v-if="error" class="w-full bg-red-100 border-red-500 border-1 p-3 text-red-500 text-center border-round">
-        <i class="pi pi-exclamation-triangle"></i>
+        <i class="pi pi-exclamation-triangle mr-1"></i>
         <span>{{ error }}</span>
       </div>
 
@@ -51,7 +87,7 @@ const error = ref('')
         </div>
       </div>
 
-      <Button class="w-full" label="S'inscrire" @click="$router.push({name: 'Login'})"/>
+      <Button class="w-full" label="S'inscrire" @click="handleRegister()"/>
 
       <div class="text-sm">
         <span class="mr-1 text-gray-800">Déjà un compte ?</span>
