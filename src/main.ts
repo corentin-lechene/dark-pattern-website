@@ -60,6 +60,7 @@ import Message from "primevue/message";
 import {createPinia} from "pinia";
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 import Listbox from "primevue/listbox";
+import InputMask from "primevue/inputmask";
 
 const pinia = createPinia()
 pinia.use(piniaPluginPersistedstate)
@@ -138,6 +139,7 @@ const app = createApp(App)
     .component('Chip', Chip)
     .component('Message', Message)
     .component('Listbox', Listbox)
+    .component('InputMask', InputMask)
 
 
 app.mount("#app");

@@ -9,7 +9,7 @@ export const useCartStore = defineStore('cart', {
     },
     getters: {
         total({cart}) {
-            return cart.reduce((acc: number, product: Product) => acc + product.price, 0);
+            return cart.reduce((acc: number, product: Product) => acc + product.price + (product.insurance ? 8.7 : 0), 0);
         }
     },
     persist: true,
@@ -26,6 +26,10 @@ export const useCartStore = defineStore('cart', {
             const index = this.cart.findIndex(product => product.id === productId);
             if (index === -1) return;
             this.cart[index].insurance = false;
+        },
+
+        clear() {
+            this.cart = [];
         }
     }
 });

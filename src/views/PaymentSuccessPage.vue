@@ -1,5 +1,12 @@
 <script lang="ts" setup>
 
+import {useCartStore} from "@/stores/cart.store";
+
+const cartStore = useCartStore();
+
+const formatDate = new Date().toLocaleDateString();
+const formatHour = new Date().toLocaleTimeString();
+
 </script>
 
 <template>
@@ -11,15 +18,15 @@
       <div class="flex flex-column gap-3">
         <div class="flex justify-content-between">
           <div>Montant</div>
-          <div>60€</div>
+          <div>{{ cartStore.total }}€</div>
         </div>
         <div class="flex justify-content-between">
           <div>Date</div>
-          <div>23/09/2021</div>
+          <div>{{ formatDate }}</div>
         </div>
         <div class="flex justify-content-between">
           <div>Heure</div>
-          <div>12:30</div>
+          <div>{{ formatHour }}</div>
         </div>
         <div class="flex justify-content-between">
           <div>Numéro de transaction</div>

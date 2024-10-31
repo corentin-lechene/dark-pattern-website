@@ -1,5 +1,6 @@
 import {defineStore} from "pinia";
 import {User} from "@/models/user.model";
+import {useCartStore} from "@/stores/cart.store";
 
 
 export const useUserStore = defineStore('user', {
@@ -14,12 +15,18 @@ export const useUserStore = defineStore('user', {
                 password: 'xxxxxxxxx',
                 newsletter: true,
                 shareData: true,
+                autoInsurance: true,
+                subscriptionRenew: true,
                 createdAt: new Date(),
                 hasSubscription: false,
             }] as User[]
         }
     },
-    getters: {},
+    getters: {
+        hasSubscription(): boolean {
+            return this.currentUser?.hasSubscription || false;
+        }
+    },
     persist: true,
     actions: {
         login(email: string, password: string) {
@@ -41,6 +48,8 @@ export const useUserStore = defineStore('user', {
                 hasSubscription: false,
                 shareData,
                 newsletter,
+                subscriptionRenew: true,
+                autoInsurance: true,
                 createdAt: new Date()
             }
             this.users.push(user);
@@ -48,10 +57,18 @@ export const useUserStore = defineStore('user', {
             this.isAuthenticated = true;
         },
 
+        logout() {
+            this.currentUser = null;
+            this.isAuthenticated = false;
+        },
+
         resetApp() {
             this.currentUser = null;
             this.isAuthenticated = false;
             this.users = [];
+
+            const cart = useCartStore();
+            cart.clear();
         }
     }
 });

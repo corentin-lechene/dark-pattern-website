@@ -12,7 +12,7 @@ defineProps<ProductCardProps>();
 
 <template>
   <div class="flex flex-column gap-2">
-    <div class="cube">
+    <div class="cube cursor-pointer">
       <img
           :src="product.image"
           alt="product image"

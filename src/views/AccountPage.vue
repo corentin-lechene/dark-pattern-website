@@ -1,7 +1,9 @@
 <script lang="ts" setup>
 
-
+import {useUserStore} from "@/stores/user.store";
 import AccountListItem from "@/components/AccountListItem.vue";
+
+const userStore = useUserStore();
 </script>
 
 <template>
@@ -34,7 +36,12 @@ import AccountListItem from "@/components/AccountListItem.vue";
         </div>
       </div>
 
-      <Button class="w-full" label="Recommencer l’expérience" severity="danger"/>
+      <Button
+          class="w-full"
+          label="Recommencer l’expérience"
+          severity="danger"
+          @click="userStore.resetApp()"
+      />
     </div>
   </div>
 </template>

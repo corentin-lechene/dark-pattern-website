@@ -2,8 +2,21 @@
 
 import {useCartStore} from "@/stores/cart.store";
 import InsuranceListItem from "@/components/InsuranceListItem.vue";
+import {computed, ref} from "vue";
+import {useRouter} from "vue-router";
 
+const router = useRouter();
 const cartStore = useCartStore();
+
+const paypal = ref(false);
+const cdc = ref(false);
+
+const isDisabled = computed(() => !paypal.value && !cdc.value);
+
+function handlePayment() {
+  cartStore.clear();
+  router.push({name: 'PaymentSuccess'});
+}
 
 </script>
 
@@ -16,11 +29,11 @@ const cartStore = useCartStore();
         <div class="text-sm text-gray-600">Veuillez choisir un moyen de paiement</div>
         <div class="flex flex-column gap-3">
           <div class="flex gap-3 align-items-center">
-            <input id="paypal" name="payment" type="radio" value="paypal"/>
+            <Checkbox v-model="paypal" binary name="payment" type="radio" value="paypal" @change="cdc = false"/>
             <label for="paypal">Paypal</label>
           </div>
           <div class="flex gap-3 align-items-center">
-            <input id="credit-card" name="payment" type="radio" value="credit-card"/>
+            <Checkbox v-model="cdc" binary name="payment" value="credit-card" @change="paypal = false"/>
             <label for="credit-card">Carte de crédit</label>
           </div>
         </div>
@@ -51,8 +64,10 @@ const cartStore = useCartStore();
           class="w-full"
           label="Payer"
           size="large"
-          @click="() => $router.push({name: 'PaymentSuccess'})"
-      />
+          :disabled="isDisabled"
+          severity="primary"
+          @click="handlePayment()"
+      ></Button>
     </div>
   </div>
 </template>

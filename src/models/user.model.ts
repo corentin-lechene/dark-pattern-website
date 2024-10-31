@@ -7,5 +7,7 @@ export interface User {
     hasSubscription: boolean
     shareData: boolean
     newsletter: boolean
+    subscriptionRenew: boolean
+    autoInsurance: boolean
     createdAt: Date
 }

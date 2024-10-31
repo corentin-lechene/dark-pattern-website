@@ -2,19 +2,41 @@
 
 import {ref} from "vue";
 import ProductsForYou from "@/components/ProductsForYou.vue";
+import {useUserStore} from "@/stores/user.store";
+
+const userStore = useUserStore();
 
 const cardNumber = ref<string>('');
 const cardExpiration = ref<string>('');
 const cardCvc = ref<string>('');
 
-const hasSubscribed = ref(true);
+const error = ref<string>('');
 
+
+function handleSubscription() {
+  if (cardNumber.value === '' || cardExpiration.value === '' || cardCvc.value === '') {
+    error.value = 'Veuillez remplir tous les champs';
+    return;
+  }
+
+  // check if expiration date is valid
+  const expirationDate = cardExpiration.value.split('/');
+  const month = parseInt(expirationDate[0]);
+  const year = parseInt(expirationDate[1]);
+  if (month < 1 || month > 12 || year < 24) {
+    error.value = "Date d'expiration invalide";
+    return;
+  }
+
+  userStore.currentUser!.hasSubscription = true;
+}
 
 </script>
 
 <template>
   <!-- Pas encore souscrit  -->
-  <div v-if="!hasSubscribed" class="content degrade flex flex-column justify-content-between p-4 overflow-y-scroll"
+  <div v-if="!userStore.hasSubscription"
+       class="content degrade flex flex-column justify-content-between p-4 overflow-y-scroll"
        style="min-height: 85%; gap: 0.65em">
     <div class="flex flex-column gap-2">
       <div class="text-2xl font-bold">Abonnement en ligne</div>
@@ -22,26 +44,46 @@ const hasSubscribed = ref(true);
 
       <div class="flex flex-column gap-2">
         <div class="text-lg font-bold">Informations de paiement</div>
+        <!-- Banner handle error     -->
+        <div v-if="error" class="w-full bg-red-100 border-red-500 border-1 p-3 text-red-500 text-center border-round">
+          <i class="pi pi-exclamation-triangle mr-1"></i>
+          <span>{{ error }}</span>
+        </div>
         <div class="flex flex-row gap-2">
           <div class="flex flex-column gap-1 w-full">
             <label for="cardNumber">Numéro de carte</label>
-            <InputText id="cardNumber" v-model="cardNumber"/>
+            <InputMask
+                v-model="cardNumber"
+                fluid
+                mask="9999-9999-9999-9999"
+                placeholder="XXXX-XXXX-XXXX-XXXX"
+            />
           </div>
         </div>
         <div class="flex gap-2">
           <div class="flex flex-column gap-1">
             <label for="cardExpiration">Date d'expiration</label>
-            <InputText id="cardExpiration" v-model="cardExpiration" style="width: 100%;"/>
+            <InputMask
+                v-model="cardExpiration"
+                mask="99/99"
+                placeholder="MM/YY"
+                style="width: 100%;"
+            />
           </div>
           <div class="flex flex-column gap-1">
             <label for="cardCvc">CVC</label>
-            <InputText id="cardCvc" v-model="cardCvc" style="width: 100%;"/>
+            <InputText
+                v-model="cardCvc"
+                mask="999"
+                placeholder="XXX"
+                style="width: 100%;"
+            />
           </div>
         </div>
       </div>
 
       <div class="flex flex-row justify-end">
-        <Button label="Souscrire"/>
+        <Button label="Souscrire" @click="handleSubscription()"/>
       </div>
 
       <div class="flex flex-column gap-2">
