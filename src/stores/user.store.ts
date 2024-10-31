@@ -11,8 +11,8 @@ export const useUserStore = defineStore('user', {
 
             users: [{
                 userId: '0',
-                email: 'x',
-                password: 'xxxxxxxxx',
+                email: 'corentin.lechene@orange.fr',
+                password: 'azertyuiop',
                 newsletter: true,
                 shareData: true,
                 autoInsurance: true,
