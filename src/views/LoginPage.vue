@@ -8,22 +8,21 @@ import {useUserStore} from "@/stores/user.store";
 const router = useRouter()
 const userStore = useUserStore();
 
-const email = ref('x')
+const email = ref('corentin.lechene@orange.fr')
 const password = ref('xxxxxxxxx')
 
 const error = ref('')
 
 function handleLogin() {
-  //todo remove this
-  // if (!email.value || !password.value) {
-  //   error.value = "Veuillez remplir tous les champs"
-  //   return
-  // }
-  //
-  // if(password.value.length < 8) {
-  //   error.value = "Le mot de passe doit contenir au moins 8 caractères"
-  //   return
-  // }
+  if (!email.value || !password.value) {
+    error.value = "Veuillez remplir tous les champs"
+    return
+  }
+
+  if (password.value.length < 8) {
+    error.value = "Le mot de passe doit contenir au moins 8 caractères"
+    return
+  }
 
   try {
     userStore.login(email.value, password.value);
