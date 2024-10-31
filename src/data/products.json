@@ -1,162 +1,162 @@
 [
   {
     "id": "1",
-    "name": "Laptop Pro",
-    "price": 1200,
-    "description": "High-performance laptop with 16GB RAM and 512GB SSD.",
-    "image": "https://picsum.photos/200/300",
+    "name": "Nature Adventure",
+    "price": 299,
+    "description": "Explore nature with a calming fish-themed paddle experience.",
+    "image": "https://cdn.pixabay.com/photo/2018/02/06/22/02/nature-3135810_1280.jpg",
     "insurance": true
   },
   {
     "id": "2",
-    "name": "Smartphone X",
-    "price": 899,
-    "description": "5G-enabled smartphone with a 6.5-inch display and 128GB storage.",
-    "image": "https://picsum.photos/200/300",
-    "insurance": true
+    "name": "Spice Collection",
+    "price": 15,
+    "description": "A selection of premium peppercorns to spice up your dishes.",
+    "image": "https://cdn.pixabay.com/photo/2018/01/04/17/46/peppercorns-3061211_1280.jpg",
+    "insurance": false
   },
   {
     "id": "3",
-    "name": "Wireless Earbuds",
-    "price": 150,
-    "description": "Noise-canceling wireless earbuds with 10-hour battery life.",
-    "image": "https://picsum.photos/200/300",
+    "name": "Seaside Stairs",
+    "price": 100,
+    "description": "Beautiful stairway along the coast, perfect for meditation and relaxation.",
+    "image": "https://cdn.pixabay.com/photo/2020/06/03/16/30/wave-5255593_1280.jpg",
     "insurance": true
   },
   {
     "id": "4",
-    "name": "4K Monitor",
-    "price": 400,
-    "description": "Ultra HD 4K monitor with 27-inch display and HDR support.",
-    "image": "https://picsum.photos/200/300",
-    "insurance": true
+    "name": "Rusty Wheel Decor",
+    "price": 45,
+    "description": "A rustic, antique wheel set for vintage decor.",
+    "image": "https://cdn.pixabay.com/photo/2015/04/12/13/30/rusty-718800_960_720.jpg",
+    "insurance": false
   },
   {
     "id": "5",
-    "name": "Gaming Chair",
-    "price": 300,
-    "description": "Ergonomic gaming chair with lumbar support and adjustable height.",
-    "image": "https://picsum.photos/200/300",
-    "insurance": true
+    "name": "Clay Pottery Set",
+    "price": 30,
+    "description": "Natural clay set ideal for art projects and decor.",
+    "image": "https://cdn.pixabay.com/photo/2013/10/16/22/34/bread-196511_1280.jpg",
+    "insurance": false
   },
   {
     "id": "6",
-    "name": "Mechanical Keyboard",
-    "price": 120,
-    "description": "RGB backlit mechanical keyboard with tactile switches.",
-    "image": "https://picsum.photos/200/300",
+    "name": "Galactic Landscape",
+    "price": 150,
+    "description": "Digital artwork depicting an otherworldly, surreal planet scene.",
+    "image": "https://cdn.pixabay.com/photo/2017/02/13/18/24/landscape-2063372_1280.jpg",
     "insurance": true
   },
   {
     "id": "7",
-    "name": "Bluetooth Speaker",
-    "price": 80,
-    "description": "Portable Bluetooth speaker with deep bass and 12-hour battery.",
-    "image": "https://picsum.photos/200/300",
-    "insurance": true
+    "name": "Organic Eggs",
+    "price": 10,
+    "description": "Fresh and free-range organic eggs, pack of ten.",
+    "image": "https://cdn.pixabay.com/photo/2018/06/01/17/39/eggs-3446869_1280.jpg",
+    "insurance": false
   },
   {
     "id": "8",
-    "name": "Smart Watch",
-    "price": 200,
-    "description": "Fitness tracker and smart watch with heart rate monitoring.",
-    "image": "https://picsum.photos/200/300",
+    "name": "Abstract Art Wallpaper",
+    "price": 20,
+    "description": "Vibrant abstract art print for modern interiors.",
+    "image": "https://cdn.pixabay.com/photo/2016/06/05/23/13/random-1438434_1280.png",
     "insurance": true
   },
   {
     "id": "9",
-    "name": "Digital Camera",
-    "price": 500,
-    "description": "Mirrorless digital camera with 24MP and 4K video recording.",
-    "image": "https://picsum.photos/200/300",
-    "insurance": true
+    "name": "Bohemian Necklace",
+    "price": 75,
+    "description": "Handcrafted bohemian-style necklace, perfect for a unique look.",
+    "image": "https://images.pexels.com/photos/3495488/pexels-photo-3495488.jpeg",
+    "insurance": false
   },
   {
     "id": "10",
-    "name": "Electric Scooter",
-    "price": 450,
-    "description": "Foldable electric scooter with a top speed of 20 mph.",
-    "image": "https://picsum.photos/200/300",
+    "name": "High Ropes Course",
+    "price": 55,
+    "description": "Challenge yourself with an exciting high ropes adventure.",
+    "image": "https://cdn.pixabay.com/photo/2017/07/10/17/55/climb-2490802_1280.jpg",
     "insurance": true
   },
   {
     "id": "11",
-    "name": "Smart Home Hub",
-    "price": 100,
-    "description": "Voice-controlled smart home hub with smart assistant integration.",
-    "image": "https://picsum.photos/200/300",
+    "name": "Space Telescope Print",
+    "price": 120,
+    "description": "High-quality print of the iconic space telescope mirror.",
+    "image": "https://cdn.pixabay.com/photo/2016/04/23/14/08/hubble-telescope-1347645_1280.jpg",
     "insurance": true
   },
   {
     "id": "12",
-    "name": "Action Camera",
-    "price": 250,
-    "description": "Waterproof action camera with 4K resolution and image stabilization.",
-    "image": "https://picsum.photos/200/300",
-    "insurance": true
+    "name": "Nature Water Stone",
+    "price": 60,
+    "description": "Beautiful stone sculpture inspired by natural water flows.",
+    "image": "https://cdn.pixabay.com/photo/2017/02/07/10/05/water-2045469_1280.jpg",
+    "insurance": false
   },
   {
     "id": "13",
-    "name": "VR Headset",
-    "price": 350,
-    "description": "Immersive virtual reality headset with 360-degree tracking.",
-    "image": "https://picsum.photos/200/300",
+    "name": "Splash Fountain",
+    "price": 100,
+    "description": "Decorative water splash fountain for garden spaces.",
+    "image": "https://cdn.pixabay.com/photo/2014/09/07/21/58/woman-438399_1280.jpg",
     "insurance": true
   },
   {
     "id": "14",
-    "name": "Wireless Charger",
-    "price": 40,
-    "description": "Fast wireless charging pad compatible with all Qi devices.",
-    "image": "https://picsum.photos/200/300",
+    "name": "Dragon Stone Statue",
+    "price": 200,
+    "description": "Intricate stone dragon statue for an ancient and mystical vibe.",
+    "image": "https://cdn.pixabay.com/photo/2017/08/12/14/05/dragon-2634391_1280.jpg",
     "insurance": true
   },
   {
     "id": "15",
-    "name": "Portable Projector",
-    "price": 300,
-    "description": "Compact projector with Full HD resolution and HDMI input.",
-    "image": "https://picsum.photos/200/300",
-    "insurance": true
+    "name": "Celebration Fireworks",
+    "price": 20,
+    "description": "Perfect for any celebration or festive occasion, pack of fireworks.",
+    "image": "https://cdn.pixabay.com/photo/2017/08/12/14/05/dragon-2634391_1280.jpg",
+    "insurance": false
   },
   {
     "id": "16",
-    "name": "Smart Thermostat",
-    "price": 180,
-    "description": "Wi-Fi-enabled smart thermostat with energy-saving features.",
-    "image": "https://picsum.photos/200/300",
+    "name": "Skyscraper Canvas",
+    "price": 80,
+    "description": "Modern cityscape on canvas, ideal for urban decor.",
+    "image": "https://cdn.pixabay.com/photo/2019/02/09/09/46/architecture-3984725_1280.jpg",
     "insurance": true
   },
   {
     "id": "17",
-    "name": "Noise Cancelling Headphones",
+    "name": "Gargoyle Fountain",
     "price": 250,
-    "description": "Over-ear noise-canceling headphones with 20-hour battery life.",
-    "image": "https://picsum.photos/200/300",
+    "description": "Classic gargoyle water feature to add charm to your garden.",
+    "image": "https://cdn.pixabay.com/photo/2014/02/06/18/35/fountain-260307_1280.jpg",
     "insurance": true
   },
   {
     "id": "18",
-    "name": "Fitness Tracker",
-    "price": 60,
-    "description": "Lightweight fitness tracker with step counting and sleep monitoring.",
-    "image": "https://picsum.photos/200/300",
-    "insurance": true
+    "name": "Chick Egg Sculpture",
+    "price": 25,
+    "description": "Decorative chick hatching sculpture, perfect for Easter.",
+    "image": "https://cdn.pixabay.com/photo/2017/06/27/19/15/hatching-chicks-2448541_960_720.jpg",
+    "insurance": false
   },
   {
     "id": "19",
-    "name": "Smart Light Bulb",
-    "price": 20,
-    "description": "Color-changing smart light bulb with Wi-Fi control.",
-    "image": "https://picsum.photos/200/300",
-    "insurance": true
+    "name": "Vintage Milk Can",
+    "price": 35,
+    "description": "Antique milk can, adds a touch of rustic charm to any setting.",
+    "image": "https://cdn.pixabay.com/photo/2015/04/02/18/53/milk-can-704093_1280.jpg",
+    "insurance": false
   },
   {
     "id": "20",
-    "name": "Electric Toothbrush",
-    "price": 100,
-    "description": "Rechargeable electric toothbrush with multiple brushing modes.",
-    "image": "https://picsum.photos/200/300",
-    "insurance": true
+    "name": "Colorful Rubber Bands",
+    "price": 5,
+    "description": "Assorted colorful rubber bands, great for crafting or office use.",
+    "image": "https://cdn.pixabay.com/photo/2017/09/13/17/42/rubber-band-2746312_1280.jpg",
+    "insurance": false
   }
 ]

@@ -1,5 +1,10 @@
 <script lang="ts" setup>
 
+import {useCartStore} from "@/stores/cart.store";
+import InsuranceListItem from "@/components/InsuranceListItem.vue";
+
+const cartStore = useCartStore();
+
 </script>
 
 <template>
@@ -23,21 +28,19 @@
       <div class="flex flex-column gap-3 pt-2">
         <div class="text-xl font-bold">Résumé de la commande</div>
         <div class="flex flex-column gap-3">
-          <div class="flex justify-content-between">
-            <div>Produit 1</div>
-            <div>10€</div>
+
+          <div v-for="product in cartStore.cart" class="flex flex-column">
+            <div class="flex justify-content-between">
+              <div>{{ product.name }}</div>
+              <div>{{ product.price }}€</div>
+            </div>
+            <InsuranceListItem v-if="product.insurance"/>
           </div>
-          <div class="flex justify-content-between">
-            <div>Produit 2</div>
-            <div>20€</div>
-          </div>
-          <div class="flex justify-content-between">
-            <div>Produit 3</div>
-            <div>30€</div>
-          </div>
+
+          <Divider class="mb-0"/>
           <div class="flex justify-content-between">
             <div>Total</div>
-            <div>60€</div>
+            <div>{{ cartStore.total }}€</div>
           </div>
         </div>
       </div>

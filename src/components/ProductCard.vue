@@ -12,11 +12,12 @@ defineProps<ProductCardProps>();
 
 <template>
   <div class="flex flex-column gap-2">
-    <div class="w-10rem">
+    <div class="cube">
       <img
           :src="product.image"
           alt="product image"
           class="w-full h-full border-round"
+          style="object-fit: cover"
           @click="$router.push({name: 'Product', params: {product_id: product.id}})"
       />
     </div>
@@ -33,5 +34,10 @@ defineProps<ProductCardProps>();
 </template>
 
 <style scoped>
-
+.cube {
+  width: auto;
+  height: 130px;
+  max-width: 200px;
+  min-width: 200px;
+}
 </style>

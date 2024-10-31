@@ -24,11 +24,11 @@ export const onBeforeEach: NavigationGuard = async (to, _, next) => {
             console.log('User is not logged in and is trying to access a private route');
             next({name: 'Login'});
         }
-        console.groupEnd();
         return;
     }
 
     next();
+    console.groupEnd();
 }
 router.beforeEach(onBeforeEach);
 

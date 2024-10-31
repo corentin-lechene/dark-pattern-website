@@ -1,8 +1,11 @@
 <script lang="ts" setup>
 
-import products from "@/data/products.json";
 import BannerProduct from "@/components/BannerProduct.vue";
 import ProductListItem from "@/components/ProductListItem.vue";
+import {useCartStore} from "@/stores/cart.store";
+import products from "@/data/products.json";
+
+const cartStore = useCartStore();
 
 const randomProduct = products[Math.floor(Math.random() * products.length)];
 
@@ -22,6 +25,7 @@ const randomProduct = products[Math.floor(Math.random() * products.length)];
             button-color="danger"
             buttonLabel="Retirer"
             view
+            @on-click="cartStore.add(product)"
         />
       </div>
     </div>
