@@ -9,7 +9,7 @@ const router = useRouter()
 const userStore = useUserStore();
 
 const email = ref('corentin.lechene@orange.fr')
-const password = ref('xxxxxxxxx')
+const password = ref('azertyuiop')
 
 const error = ref('')
 
@@ -31,7 +31,7 @@ function handleLogin() {
         title: "Bienvenue",
         message: "Venir découvrir nos produits à prix réduits !"
       })
-    }, 5000)
+    }, 20000)
     router.push({name: 'Home'})
   } catch (e) {
     error.value = e.message as string

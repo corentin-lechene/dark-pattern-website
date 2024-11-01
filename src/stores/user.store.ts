@@ -8,6 +8,7 @@ export const useUserStore = defineStore('user', {
         return {
             currentUser: null as User | null,
             isAuthenticated: false,
+            isFirstTime: true,
 
             users: [] as User[]
         }
@@ -20,6 +21,7 @@ export const useUserStore = defineStore('user', {
     persist: true,
     actions: {
         init() {
+            this.isFirstTime = true;
             this.users = [
                 {
                     userId: '0',
@@ -39,6 +41,7 @@ export const useUserStore = defineStore('user', {
             const user = this.users.find(user => user.email === email && user.password === password);
 
             if (user) {
+                this.isFirstTime = true;
                 this.currentUser = user;
                 this.isAuthenticated = true;
             } else {
@@ -71,6 +74,7 @@ export const useUserStore = defineStore('user', {
         resetApp() {
             this.currentUser = null;
             this.isAuthenticated = false;
+            this.isFirstTime = true;
             this.users = [];
 
             const cart = useCartStore();

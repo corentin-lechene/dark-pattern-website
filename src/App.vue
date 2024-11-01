@@ -36,6 +36,11 @@ onMounted(() => {
 <template>
   <div class="flex justify-content-center align-items-center h-full w-full relative">
     <div v-if="!isFirstTime" class="h-full w-full relative bg-white" style="max-width: 500px">
+      <Toast
+          :base-z-index="9999"
+          :pt="{root: {style: {top: '3vh'}}}"
+          position="top-center"
+      />
       <NotificationPopup id="notificationRef"/>
       <router-view></router-view>
     </div>

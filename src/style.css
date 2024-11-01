@@ -39,3 +39,7 @@ body {
     padding-bottom: env(safe-area-inset-bottom);
     overflow-y: scroll;
 }
+
+.p-dialog-mask {
+    z-index: 1000 !important;
+}
