@@ -8,6 +8,7 @@ import ProductsForYou from "@/components/ProductsForYou.vue";
 import {useCartStore} from "@/stores/cart.store";
 import {useToast} from "primevue/usetoast";
 import {useUserStore} from "@/stores/user.store";
+import {NotificationsService} from "@/services/notifications.service.ts";
 
 const route = useRoute();
 const router = useRouter();
@@ -39,6 +40,13 @@ function handleAddToCart() {
     description: product.value.description,
   });
   toast.add({severity: 'success', summary: 'Produit ajouté au panier', life: 3000});
+  setTimeout(() => {
+    NotificationsService.show({
+      title: "Vos produits vous attend",
+      message: "N'oublier pas de valider votre panier, les produits sont limités !",
+      delay: 7000
+    })
+  }, 10000)
 }
 
 </script>

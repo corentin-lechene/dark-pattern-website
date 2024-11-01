@@ -11,18 +11,16 @@ const subscriptionRenew = ref(Boolean(userStore.currentUser!.subscriptionRenew))
 const newsletter = ref(Boolean(userStore.currentUser!.newsletter));
 const shareData = ref(Boolean(userStore.currentUser!.shareData));
 const autoInsurance = ref(Boolean(userStore.currentUser!.autoInsurance));
-const save = ref(true);
-
-const reAdd = () => {
-  setTimeout(() => autoInsurance.value = true, 100)
-}
+const save = ref(false);
 
 const email = ref(String(userStore.currentUser!.email));
 
 function saveChanges() {
-  if (!save.value) {
+  if (save.value) {
     userStore.currentUser!.newsletter = newsletter.value;
     userStore.currentUser!.shareData = shareData.value;
+    userStore.currentUser!.subscriptionRenew = subscriptionRenew.value;
+    userStore.currentUser!.autoInsurance = autoInsurance.value;
   }
 }
 
@@ -48,15 +46,15 @@ function handleLogout() {
           <span class="text-sm">J'accepte de partager mes données</span>
         </div>
         <div class="flex gap-2 align-items-center">
-          <Checkbox v-model="save" binary @change="saveChanges()"/>
-          <span class="text-sm">Ne pas sauvegarder</span>
-        </div>
-        <div class="flex gap-2 align-items-center">
           <Checkbox v-model="subscriptionRenew" binary/>
           <span class="text-sm">Auto valider le renouvellement de mon abonnement</span>
         </div>
         <div class="flex gap-2 align-items-center">
-          <Checkbox v-model="autoInsurance" binary @change="reAdd()"/>
+          <Checkbox v-model="save" binary @change="saveChanges()"/>
+          <span class="text-sm">Je souhaite sauvegarder</span>
+        </div>
+        <div class="flex gap-2 align-items-center">
+          <Checkbox v-model="autoInsurance" binary/>
           <span class="text-sm">Ajouter automatiquement une assurance</span>
         </div>
       </div>

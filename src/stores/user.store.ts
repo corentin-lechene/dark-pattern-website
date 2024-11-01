@@ -9,17 +9,7 @@ export const useUserStore = defineStore('user', {
             currentUser: null as User | null,
             isAuthenticated: false,
 
-            users: [{
-                userId: '0',
-                email: 'corentin.lechene@orange.fr',
-                password: 'azertyuiop',
-                newsletter: true,
-                shareData: true,
-                autoInsurance: true,
-                subscriptionRenew: true,
-                createdAt: new Date(),
-                hasSubscription: false,
-            }] as User[]
+            users: [] as User[]
         }
     },
     getters: {
@@ -29,6 +19,22 @@ export const useUserStore = defineStore('user', {
     },
     persist: true,
     actions: {
+        init() {
+            this.users = [
+                {
+                    userId: '0',
+                    email: 'corentin.lechene@orange.fr',
+                    password: 'azertyuiop',
+                    newsletter: true,
+                    shareData: true,
+                    autoInsurance: true,
+                    subscriptionRenew: true,
+                    createdAt: new Date(),
+                    hasSubscription: false,
+                }
+            ];
+        },
+
         login(email: string, password: string) {
             const user = this.users.find(user => user.email === email && user.password === password);
 

@@ -44,7 +44,7 @@ notification.value = {
 }
 
 .notification-animation {
-  animation: slide-down 0.5s ease forwards, slide-up 0.5s ease 2.5s forwards;
+  animation: slide-down 0.5s ease forwards, slide-up 0.5s ease 5s forwards;
 }
 
 @keyframes slide-down {

@@ -28,7 +28,7 @@ export class NotificationsService {
             element.classList.remove(NotificationClass.Hidden);
             element.classList.add(NotificationClass.NotificationAnimation);
 
-            setTimeout(() => this.hide(), 3250);
+            setTimeout(() => this.hide(), 5500);
         }
     }
 

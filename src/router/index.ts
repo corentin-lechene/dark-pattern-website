@@ -17,19 +17,25 @@ export const onBeforeEach: NavigationGuard = async (to, _, next) => {
     console.log('to:', to);
     console.log('user:', user);
 
+    if (userStore.users.length === 0) {
+        userStore.init();
+    }
+
     if (!user) {
         if (['Login', 'Register'].includes(to.name as string)) {
             console.log('User is not logged in and is trying to access a public route');
+            console.groupEnd();
             next();
         } else {
             console.log('User is not logged in and is trying to access a private route');
+            console.groupEnd();
             next({name: 'Login'});
         }
         return;
     }
 
-    next();
     console.groupEnd();
+    next();
 }
 router.beforeEach(onBeforeEach);
 
