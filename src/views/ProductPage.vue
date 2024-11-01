@@ -7,9 +7,11 @@ import products from "@/data/products.json";
 import ProductsForYou from "@/components/ProductsForYou.vue";
 import {useCartStore} from "@/stores/cart.store";
 import {useToast} from "primevue/usetoast";
+import {useUserStore} from "@/stores/user.store";
 
 const route = useRoute();
 const router = useRouter();
+const userStore = useUserStore();
 const cartStore = useCartStore();
 const toast = useToast();
 
@@ -28,7 +30,14 @@ onMounted(() => {
 })
 
 function handleAddToCart() {
-  cartStore.add(product.value);
+  cartStore.add({
+    id: product.value.id,
+    name: product.value.name,
+    price: product.value.price,
+    image: product.value.image,
+    insurance: userStore.currentUser!.autoInsurance,
+    description: product.value.description,
+  });
   toast.add({severity: 'success', summary: 'Produit ajouté au panier', life: 3000});
 }
 
