@@ -123,7 +123,7 @@ function addObjectives() {
       :pt="{header: {style: {padding: 0}}, content: {style: {padding: 0, position: 'relative'}}, root: {style: {border: 'none', borderRadius: '0.5em', height: '750px', maxHeight: '750px'}}}"
       class=""
       modal
-      style="width: 85%"
+      style="width: 85%; max-width: 450px"
   >
     <template #header>
       <div class="w-full h-3rem relative" style="border-radius: 30px">

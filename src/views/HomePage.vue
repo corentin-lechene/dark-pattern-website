@@ -22,7 +22,6 @@ const randomProduct: Product = products[Math.floor(Math.random() * products.leng
 const canClose = ref(false);
 
 function handleOpenProductLimitedDialog() {
-  if (!userStore.isFirstTime) return;
   toast.add({
     severity: "info",
     summary: "Produit limité",
