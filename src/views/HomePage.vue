@@ -17,6 +17,8 @@ const userStore = useUserStore();
 const objectiveStore = useObjectiveStore();
 const toast = useToast();
 
+const top = ref(0);
+
 const openProductLimitedDialog = ref(false);
 const randomProduct: Product = products[Math.floor(Math.random() * products.length)];
 const canClose = ref(false);
@@ -74,7 +76,9 @@ function handleAddProduct() {
         <div class="w-full h-15rem relative" style="border-radius: 30px">
           <div
               v-if="canClose"
-              class="flex align-items-center absolute top-0 right-0 m-2 border-round-3xl bg-gray-400"
+              :style="{top: `${top}px`}"
+              class="flex align-items-center absolute right-0 m-2 border-round-3xl bg-gray-400"
+              @mouseover="top += 25"
           >
             <div class="pl-3 text-white">Fermer</div>
             <i class="pi pi-times text-white p-2 text-sm cursor-pointer" style="margin-bottom: -2px"
