@@ -98,9 +98,9 @@ function addObjectives() {
       if (index === allObjectives.value.length - 1) {
 
 
-        if (displayedObjectives.value.every(obj => obj.succeed || (obj.color === 'orange-200' && !obj.succeed))) {
+        // if (displayedObjectives.value.every(obj => obj.succeed || (obj.color === 'orange-200' && !obj.succeed))) {
           show.value = true;
-        }
+        // }
       }
     }, index * 300);
   });
