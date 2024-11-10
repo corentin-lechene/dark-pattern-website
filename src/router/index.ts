@@ -32,6 +32,8 @@ export const onBeforeEach: NavigationGuard = async (to, _, next) => {
             next({name: 'Login'});
         }
         return;
+    } else if (['Login', 'Register'].includes(to.name as string)) {
+        return next({name: 'Home'});
     }
 
     console.groupEnd();

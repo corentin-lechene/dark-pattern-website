@@ -4,9 +4,11 @@ import {ref} from "vue";
 import {useRouter} from "vue-router";
 import {NotificationsService} from "@/services/notifications.service";
 import {useUserStore} from "@/stores/user.store";
+import {useObjectiveStore} from "@/stores/objective.store";
 
 const router = useRouter()
 const userStore = useUserStore();
+const objectiveStore = useObjectiveStore();
 
 const email = ref('corentin.lechene@orange.fr')
 const password = ref('azertyuiop')
@@ -25,15 +27,17 @@ function handleLogin() {
   }
 
   try {
-    userStore.login(email.value, password.value);
+    userStore.login(email.value.trim().toLowerCase(), password.value);
     setTimeout(() => {
       NotificationsService.show({
         title: "Bienvenue",
         message: "Venir découvrir nos produits à prix réduits !"
       })
     }, 20000)
+    objectiveStore.logged();
     router.push({name: 'Home'})
   } catch (e) {
+    console.error(e)
     error.value = e.message as string
   }
 }
@@ -56,12 +60,12 @@ function handleLogin() {
 
       <div class="flex flex-column gap-2 w-full">
         <div class="text-lg">Adresse email</div>
-        <InputText v-model="email" label="Email" placeholder="john.doe@email.fr"/>
+        <InputText v-model="email" label="Email" placeholder="john.doe@email.fr" type="email"/>
       </div>
 
       <div class="flex flex-column gap-2 w-full">
         <div class="text-lg">Mot de passe</div>
-        <InputText v-model="password" label="Mot de passe" placeholder="***********"/>
+        <Password v-model="password" :feedback="false" label="Mot de passe" placeholder="***********"/>
       </div>
 
       <Button class="w-full" label="Se connecter" @click="handleLogin()"/>

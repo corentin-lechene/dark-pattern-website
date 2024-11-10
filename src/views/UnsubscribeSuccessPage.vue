@@ -1,4 +1,12 @@
 <script lang="ts" setup>
+import {useObjectiveStore} from "@/stores/objective.store";
+import {onMounted} from "vue";
+
+const objectiveStore = useObjectiveStore();
+
+onMounted(() => {
+  objectiveStore.unsubscribed();
+})
 
 </script>
 

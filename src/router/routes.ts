@@ -95,6 +95,11 @@ const routes: Array<RouteRecordRaw> = [
                 component: () => import("@/views/ProductPage.vue"),
             },
             {
+                path: 'questions',
+                name: 'Questions',
+                component: () => import("@/views/QuestionsPage.vue"),
+            },
+            {
                 path: "404",
                 name: "404",
                 component: () => import("@/views/NotFoundPage.vue")

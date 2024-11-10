@@ -5,7 +5,29 @@
     "price": 299,
     "description": "Explore nature with a calming fish-themed paddle experience.",
     "image": "https://cdn.pixabay.com/photo/2018/02/06/22/02/nature-3135810_1280.jpg",
-    "insurance": true
+    "insurance": true,
+    "size": 3,
+    "category": {
+      "name": "Jewelry",
+      "image": "https://images.pexels.com/photos/3495488/pexels-photo-3495488.jpeg",
+      "description": "Handcrafted and elegant pieces that add a personal touch to any look."
+    },
+    "comments": [
+      {
+        "id": "1",
+        "userFullName": "Alice Dupont",
+        "userAvatar": "https://randomuser.me/api/portraits/men/57.jpg",
+        "content": "Amazing experience! Really enjoyed the nature views.",
+        "createdAt": "2023-09-12T10:30:00Z"
+      },
+      {
+        "id": "2",
+        "userFullName": "John Martin",
+        "userAvatar": "https://randomuser.me/api/portraits/women/12.jpg",
+        "content": "Worth every penny, highly recommended!",
+        "createdAt": "2023-09-15T14:22:00Z"
+      }
+    ]
   },
   {
     "id": "2",
@@ -13,7 +35,22 @@
     "price": 15,
     "description": "A selection of premium peppercorns to spice up your dishes.",
     "image": "https://cdn.pixabay.com/photo/2018/01/04/17/46/peppercorns-3061211_1280.jpg",
-    "insurance": false
+    "insurance": false,
+    "size": 3,
+    "category": {
+      "name": "Adventure",
+      "image": "https://cdn.pixabay.com/photo/2017/07/10/17/55/climb-2490802_1280.jpg",
+      "description": "Experience thrilling outdoor activities and breathtaking nature escapes."
+    },
+    "comments": [
+      {
+        "id": "3",
+        "userFullName": "Pauline Gérard",
+        "userAvatar": "https://randomuser.me/api/portraits/women/12.jpg",
+        "content": "Adds a nice kick to my cooking. Great variety!",
+        "createdAt": "2023-08-22T09:45:00Z"
+      }
+    ]
   },
   {
     "id": "3",
@@ -21,7 +58,29 @@
     "price": 100,
     "description": "Beautiful stairway along the coast, perfect for meditation and relaxation.",
     "image": "https://cdn.pixabay.com/photo/2020/06/03/16/30/wave-5255593_1280.jpg",
-    "insurance": true
+    "insurance": true,
+    "size": 3,
+    "category": {
+      "name": "Art",
+      "image": "https://cdn.pixabay.com/photo/2016/06/05/23/13/random-1438434_1280.png",
+      "description": "Explore our collection of art pieces, from modern abstracts to classic prints."
+    },
+    "comments": [
+      {
+        "id": "4",
+        "userFullName": "Claire Lemoine",
+        "userAvatar": "https://randomuser.me/api/portraits/men/57.jpg",
+        "content": "Stunning addition to my meditation room.",
+        "createdAt": "2023-07-05T13:37:00Z"
+      },
+      {
+        "id": "5",
+        "userFullName": "Marc Fournier",
+        "userAvatar": "https://randomuser.me/api/portraits/men/21.jpg",
+        "content": "Beautiful piece, very calming!",
+        "createdAt": "2023-07-18T11:11:00Z"
+      }
+    ]
   },
   {
     "id": "4",
@@ -29,7 +88,22 @@
     "price": 45,
     "description": "A rustic, antique wheel set for vintage decor.",
     "image": "https://cdn.pixabay.com/photo/2015/04/12/13/30/rusty-718800_960_720.jpg",
-    "insurance": false
+    "insurance": false,
+    "size": 3,
+    "category": {
+      "name": "Decor",
+      "image": "https://cdn.pixabay.com/photo/2017/08/12/14/05/dragon-2634391_1280.jpg",
+      "description": "Unique and stylish items to enhance your home and garden ambiance."
+    },
+    "comments": [
+      {
+        "id": "6",
+        "userFullName": "Hugo Leduc",
+        "userAvatar": "https://randomuser.me/api/portraits/women/21.jpg",
+        "content": "Looks amazing in my garden setup!",
+        "createdAt": "2023-08-15T16:00:00Z"
+      }
+    ]
   },
   {
     "id": "5",
@@ -37,7 +111,22 @@
     "price": 30,
     "description": "Natural clay set ideal for art projects and decor.",
     "image": "https://cdn.pixabay.com/photo/2013/10/16/22/34/bread-196511_1280.jpg",
-    "insurance": false
+    "insurance": false,
+    "size": 3,
+    "category": {
+      "name": "Adventure",
+      "image": "https://cdn.pixabay.com/photo/2017/07/10/17/55/climb-2490802_1280.jpg",
+      "description": "Experience thrilling outdoor activities and breathtaking nature escapes."
+    },
+    "comments": [
+      {
+        "id": "7",
+        "userFullName": "Louise Renaud",
+        "userAvatar": "https://randomuser.me/api/portraits/women/12.jpg",
+        "content": "Perfect for my pottery class.",
+        "createdAt": "2023-06-25T12:15:00Z"
+      }
+    ]
   },
   {
     "id": "6",
@@ -45,7 +134,22 @@
     "price": 150,
     "description": "Digital artwork depicting an otherworldly, surreal planet scene.",
     "image": "https://cdn.pixabay.com/photo/2017/02/13/18/24/landscape-2063372_1280.jpg",
-    "insurance": true
+    "insurance": true,
+    "size": 3,
+    "category": {
+      "name": "Decor",
+      "image": "https://cdn.pixabay.com/photo/2017/08/12/14/05/dragon-2634391_1280.jpg",
+      "description": "Unique and stylish items to enhance your home and garden ambiance."
+    },
+    "comments": [
+      {
+        "id": "8",
+        "userFullName": "Sarah Bernard",
+        "userAvatar": "https://randomuser.me/api/portraits/women/21.jpg",
+        "content": "Unique piece, my guests love it!",
+        "createdAt": "2023-08-10T14:45:00Z"
+      }
+    ]
   },
   {
     "id": "7",
@@ -53,7 +157,22 @@
     "price": 10,
     "description": "Fresh and free-range organic eggs, pack of ten.",
     "image": "https://cdn.pixabay.com/photo/2018/06/01/17/39/eggs-3446869_1280.jpg",
-    "insurance": false
+    "insurance": false,
+    "size": 3,
+    "category": {
+      "name": "Art",
+      "image": "https://cdn.pixabay.com/photo/2016/06/05/23/13/random-1438434_1280.png",
+      "description": "Explore our collection of art pieces, from modern abstracts to classic prints."
+    },
+    "comments": [
+      {
+        "id": "9",
+        "userFullName": "Lucie Martin",
+        "userAvatar": "https://randomuser.me/api/portraits/men/57.jpg",
+        "content": "Very fresh and tasty!",
+        "createdAt": "2023-05-30T08:25:00Z"
+      }
+    ]
   },
   {
     "id": "8",
@@ -61,7 +180,29 @@
     "price": 20,
     "description": "Vibrant abstract art print for modern interiors.",
     "image": "https://cdn.pixabay.com/photo/2016/06/05/23/13/random-1438434_1280.png",
-    "insurance": true
+    "insurance": true,
+    "size": 3,
+    "category": {
+      "name": "Jewelry",
+      "image": "https://images.pexels.com/photos/3495488/pexels-photo-3495488.jpeg",
+      "description": "Handcrafted and elegant pieces that add a personal touch to any look."
+    },
+    "comments": [
+      {
+        "id": "10",
+        "userFullName": "Mona Lefevre",
+        "userAvatar": "https://randomuser.me/api/portraits/men/11.jpg",
+        "content": "This wallpaper really brightened up my living room!",
+        "createdAt": "2023-07-20T15:10:00Z"
+      },
+      {
+        "id": "11",
+        "userFullName": "Alexis Paul",
+        "userAvatar": "https://randomuser.me/api/portraits/women/21.jpg",
+        "content": "Great print quality and colors.",
+        "createdAt": "2023-07-25T10:05:00Z"
+      }
+    ]
   },
   {
     "id": "9",
@@ -69,7 +210,22 @@
     "price": 75,
     "description": "Handcrafted bohemian-style necklace, perfect for a unique look.",
     "image": "https://images.pexels.com/photos/3495488/pexels-photo-3495488.jpeg",
-    "insurance": false
+    "insurance": false,
+    "size": 3,
+    "category": {
+      "name": "Decor",
+      "image": "https://cdn.pixabay.com/photo/2017/08/12/14/05/dragon-2634391_1280.jpg",
+      "description": "Unique and stylish items to enhance your home and garden ambiance."
+    },
+    "comments": [
+      {
+        "id": "12",
+        "userFullName": "Emma Roux",
+        "userAvatar": "https://randomuser.me/api/portraits/women/12.jpg",
+        "content": "Absolutely love this piece, it’s very unique!",
+        "createdAt": "2023-06-05T12:40:00Z"
+      }
+    ]
   },
   {
     "id": "10",
@@ -77,7 +233,29 @@
     "price": 55,
     "description": "Challenge yourself with an exciting high ropes adventure.",
     "image": "https://cdn.pixabay.com/photo/2017/07/10/17/55/climb-2490802_1280.jpg",
-    "insurance": true
+    "insurance": true,
+    "size": 3,
+    "category": {
+      "name": "Decor",
+      "image": "https://cdn.pixabay.com/photo/2017/08/12/14/05/dragon-2634391_1280.jpg",
+      "description": "Unique and stylish items to enhance your home and garden ambiance."
+    },
+    "comments": [
+      {
+        "id": "13",
+        "userFullName": "Lucas Bernard",
+        "userAvatar": "https://randomuser.me/api/portraits/women/65.jpg",
+        "content": "Amazing experience! I felt safe and challenged.",
+        "createdAt": "2023-09-01T11:00:00Z"
+      },
+      {
+        "id": "14",
+        "userFullName": "Amélie Durand",
+        "userAvatar": "https://randomuser.me/api/portraits/men/11.jpg",
+        "content": "Perfect for adventure seekers. Had a blast!",
+        "createdAt": "2023-09-03T10:50:00Z"
+      }
+    ]
   },
   {
     "id": "11",
@@ -85,7 +263,22 @@
     "price": 120,
     "description": "High-quality print of the iconic space telescope mirror.",
     "image": "https://cdn.pixabay.com/photo/2016/04/23/14/08/hubble-telescope-1347645_1280.jpg",
-    "insurance": true
+    "insurance": true,
+    "size": 3,
+    "category": {
+      "name": "Adventure",
+      "image": "https://cdn.pixabay.com/photo/2017/07/10/17/55/climb-2490802_1280.jpg",
+      "description": "Experience thrilling outdoor activities and breathtaking nature escapes."
+    },
+    "comments": [
+      {
+        "id": "15",
+        "userFullName": "Claire Deschamps",
+        "userAvatar": "https://randomuser.me/api/portraits/women/65.jpg",
+        "content": "A beautiful addition to my collection.",
+        "createdAt": "2023-08-12T14:20:00Z"
+      }
+    ]
   },
   {
     "id": "12",
@@ -93,7 +286,22 @@
     "price": 60,
     "description": "Beautiful stone sculpture inspired by natural water flows.",
     "image": "https://cdn.pixabay.com/photo/2017/02/07/10/05/water-2045469_1280.jpg",
-    "insurance": false
+    "insurance": false,
+    "size": 3,
+    "category": {
+      "name": "Art",
+      "image": "https://cdn.pixabay.com/photo/2016/06/05/23/13/random-1438434_1280.png",
+      "description": "Explore our collection of art pieces, from modern abstracts to classic prints."
+    },
+    "comments": [
+      {
+        "id": "16",
+        "userFullName": "Leo Roy",
+        "userAvatar": "https://randomuser.me/api/portraits/women/21.jpg",
+        "content": "Brings a nice, calm feeling to my garden.",
+        "createdAt": "2023-08-30T09:15:00Z"
+      }
+    ]
   },
   {
     "id": "13",
@@ -101,7 +309,22 @@
     "price": 100,
     "description": "Decorative water splash fountain for garden spaces.",
     "image": "https://cdn.pixabay.com/photo/2014/09/07/21/58/woman-438399_1280.jpg",
-    "insurance": true
+    "insurance": true,
+    "size": 3,
+    "category": {
+      "name": "Garden",
+      "image": "https://cdn.pixabay.com/photo/2014/02/06/18/35/fountain-260307_1280.jpg",
+      "description": "Beautiful items to bring character and tranquility to any garden space."
+    },
+    "comments": [
+      {
+        "id": "17",
+        "userFullName": "Anaïs Lucas",
+        "userAvatar": "https://randomuser.me/api/portraits/women/65.jpg",
+        "content": "Adds a beautiful ambiance to our outdoor space.",
+        "createdAt": "2023-06-19T18:45:00Z"
+      }
+    ]
   },
   {
     "id": "14",
@@ -109,7 +332,22 @@
     "price": 200,
     "description": "Intricate stone dragon statue for an ancient and mystical vibe.",
     "image": "https://cdn.pixabay.com/photo/2017/08/12/14/05/dragon-2634391_1280.jpg",
-    "insurance": true
+    "insurance": true,
+    "size": 3,
+    "category": {
+      "name": "Jewelry",
+      "image": "https://images.pexels.com/photos/3495488/pexels-photo-3495488.jpeg",
+      "description": "Handcrafted and elegant pieces that add a personal touch to any look."
+    },
+    "comments": [
+      {
+        "id": "18",
+        "userFullName": "Charles Petit",
+        "userAvatar": "https://randomuser.me/api/portraits/men/11.jpg",
+        "content": "Looks fantastic in my backyard!",
+        "createdAt": "2023-07-04T10:30:00Z"
+      }
+    ]
   },
   {
     "id": "15",
@@ -117,7 +355,22 @@
     "price": 20,
     "description": "Perfect for any celebration or festive occasion, pack of fireworks.",
     "image": "https://cdn.pixabay.com/photo/2017/08/12/14/05/dragon-2634391_1280.jpg",
-    "insurance": false
+    "insurance": false,
+    "size": 3,
+    "category": {
+      "name": "Jewelry",
+      "image": "https://images.pexels.com/photos/3495488/pexels-photo-3495488.jpeg",
+      "description": "Handcrafted and elegant pieces that add a personal touch to any look."
+    },
+    "comments": [
+      {
+        "id": "19",
+        "userFullName": "Juliette Menard",
+        "userAvatar": "https://randomuser.me/api/portraits/men/84.jpg",
+        "content": "Made my party unforgettable!",
+        "createdAt": "2023-05-12T20:30:00Z"
+      }
+    ]
   },
   {
     "id": "16",
@@ -125,7 +378,22 @@
     "price": 80,
     "description": "Modern cityscape on canvas, ideal for urban decor.",
     "image": "https://cdn.pixabay.com/photo/2019/02/09/09/46/architecture-3984725_1280.jpg",
-    "insurance": true
+    "insurance": true,
+    "size": 3,
+    "category": {
+      "name": "Garden",
+      "image": "https://cdn.pixabay.com/photo/2014/02/06/18/35/fountain-260307_1280.jpg",
+      "description": "Beautiful items to bring character and tranquility to any garden space."
+    },
+    "comments": [
+      {
+        "id": "20",
+        "userFullName": "Pauline Charrier",
+        "userAvatar": "https://randomuser.me/api/portraits/men/84.jpg",
+        "content": "Stunning piece, fits perfectly in my office.",
+        "createdAt": "2023-09-22T15:25:00Z"
+      }
+    ]
   },
   {
     "id": "17",
@@ -133,7 +401,22 @@
     "price": 250,
     "description": "Classic gargoyle water feature to add charm to your garden.",
     "image": "https://cdn.pixabay.com/photo/2014/02/06/18/35/fountain-260307_1280.jpg",
-    "insurance": true
+    "insurance": true,
+    "size": 3,
+    "category": {
+      "name": "Adventure",
+      "image": "https://cdn.pixabay.com/photo/2017/07/10/17/55/climb-2490802_1280.jpg",
+      "description": "Experience thrilling outdoor activities and breathtaking nature escapes."
+    },
+    "comments": [
+      {
+        "id": "21",
+        "userFullName": "Isabelle Laurent",
+        "userAvatar": "https://randomuser.me/api/portraits/men/21.jpg",
+        "content": "A beautiful fountain, adds character to my garden.",
+        "createdAt": "2023-08-07T11:45:00Z"
+      }
+    ]
   },
   {
     "id": "18",
@@ -141,22 +424,21 @@
     "price": 25,
     "description": "Decorative chick hatching sculpture, perfect for Easter.",
     "image": "https://cdn.pixabay.com/photo/2017/06/27/19/15/hatching-chicks-2448541_960_720.jpg",
-    "insurance": false
-  },
-  {
-    "id": "19",
-    "name": "Vintage Milk Can",
-    "price": 35,
-    "description": "Antique milk can, adds a touch of rustic charm to any setting.",
-    "image": "https://cdn.pixabay.com/photo/2015/04/02/18/53/milk-can-704093_1280.jpg",
-    "insurance": false
-  },
-  {
-    "id": "20",
-    "name": "Colorful Rubber Bands",
-    "price": 5,
-    "description": "Assorted colorful rubber bands, great for crafting or office use.",
-    "image": "https://cdn.pixabay.com/photo/2017/09/13/17/42/rubber-band-2746312_1280.jpg",
-    "insurance": false
+    "insurance": false,
+    "size": 3,
+    "category": {
+      "name": "Adventure",
+      "image": "https://cdn.pixabay.com/photo/2017/07/10/17/55/climb-2490802_1280.jpg",
+      "description": "Experience thrilling outdoor activities and breathtaking nature escapes."
+    },
+    "comments": [
+      {
+        "id": "22",
+        "userFullName": "Marie Forestier",
+        "userAvatar": "https://randomuser.me/api/portraits/men/84.jpg",
+        "content": "Very cute, perfect for Easter decoration.",
+        "createdAt": "2023-04-02T08:10:00Z"
+      }
+    ]
   }
 ]

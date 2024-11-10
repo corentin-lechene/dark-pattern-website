@@ -1,43 +1,25 @@
 <script lang="ts" setup>
 import ProductsForYou from "@/components/ProductsForYou.vue";
 import ProductsNews from "@/components/ProductsNews.vue";
-import {computed, onMounted, ref} from "vue";
+import {onMounted, ref} from "vue";
 import products from "@/data/products.json";
-import ProductListItem from "@/components/ProductListItem.vue";
 import {useCartStore} from "@/stores/cart.store";
 import {useToast} from "primevue/usetoast";
 import {useUserStore} from "@/stores/user.store";
+import BannerSubscription from "@/components/BannerSubscription.vue";
+import CategoriesSlider from "@/components/CategoriesSlider.vue";
+import {Product} from "@/models/product.model";
+import Comments from "@/components/Comments.vue";
+import {useObjectiveStore} from "@/stores/objective.store";
 
 const cartStore = useCartStore();
 const userStore = useUserStore();
+const objectiveStore = useObjectiveStore();
 const toast = useToast();
 
 const openProductLimitedDialog = ref(false);
-const randomProduct = products[Math.floor(Math.random() * products.length)];
-const remainingTime = ref(10 * 60); // Temps en secondes (10 minutes)
-
-const formattedTime = computed(() => {
-  const minutes = Math.floor(remainingTime.value / 60);
-  const seconds = remainingTime.value % 60;
-  return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-});
-
-function startTimer() {
-  const timerInterval = setInterval(() => {
-    if (remainingTime.value > 0) {
-      remainingTime.value -= 1;
-    } else {
-      clearInterval(timerInterval);
-      openProductLimitedDialog.value = false; // Ferme la boîte de dialogue quand le temps est écoulé
-      toast.add({
-        severity: "warn",
-        summary: "Temps écoulé",
-        detail: "L'offre a expiré !",
-        life: 5000,
-      });
-    }
-  }, 1000);
-}
+const randomProduct: Product = products[Math.floor(Math.random() * products.length)];
+const canClose = ref(false);
 
 function handleOpenProductLimitedDialog() {
   if (!userStore.isFirstTime) return;
@@ -50,20 +32,18 @@ function handleOpenProductLimitedDialog() {
   });
   userStore.isFirstTime = false;
   openProductLimitedDialog.value = true;
-  startTimer();
+
+  setTimeout(() => {
+    canClose.value = true;
+  }, 5000);
 }
 
 onMounted(() => handleOpenProductLimitedDialog());
 
 function handleAddProduct() {
-  cartStore.add({
-    id: randomProduct.id,
-    name: randomProduct.name,
-    price: randomProduct.price,
-    image: randomProduct.image,
-    description: randomProduct.description,
-    insurance: true,
-  });
+  cartStore.currentProduct = randomProduct;
+  cartStore.addProduct(true)
+  objectiveStore.addedArticle();
   openProductLimitedDialog.value = false;
 }
 </script>
@@ -73,38 +53,58 @@ function handleAddProduct() {
       class="content flex flex-column pb-4 overflow-y-scroll"
       style="gap: 0.65em; min-height: 85%;"
   >
-    <ProductsForYou/>
+    <BannerSubscription v-if="userStore.currentUser?.subscription !== 'premium'"/>
+
+    <ProductsForYou :class="{'mt-4': userStore.currentUser?.subscription === 'premium'}"/>
+
+    <CategoriesSlider/>
+
     <ProductsNews :seed="1" title="Nouveautés"/>
     <ProductsNews :seed="6" title="Incontournables"/>
     <ProductsNews :seed="12" title="Meilleures ventes"/>
 
     <Dialog
         v-model:visible="openProductLimitedDialog"
-        :base-z-index="0"
-        class="mx-4"
-        header="Produit limité"
-        style="width: 450px; height: 95%;"
+        :closable="false"
+        :pt="{header: {style: {padding: 0}}, content: {style: {padding: 0, position: 'relative'}}, root: {style: {border: 'none', borderRadius: '50px', height: '550px', maxHeight: '750px'}}}"
+        class="m-4"
+        modal
+        style="width: 425px;"
     >
-      <div class="flex flex-column gap-3">
-        <div class="text-xl">Venez découvrir le produit phare</div>
-        <p class="text-gray-600">
-          Tout le monde en parle, et tout le monde le veut.
-          Voici la révolution qui va bouleverser votre quotidien.
-        </p>
-
-        <!-- Affichage du timer de 10 minutes -->
-        <div class="timer">
-          Temps restant : <span>{{ formattedTime }}</span>
+      <template #header>
+        <div class="w-full h-15rem relative" style="border-radius: 30px">
+          <div
+              v-if="canClose"
+              class="flex align-items-center absolute top-0 right-0 m-2 border-round-3xl bg-gray-400"
+          >
+            <div class="pl-3 text-white">Fermer</div>
+            <i class="pi pi-times text-white p-2 text-sm cursor-pointer" style="margin-bottom: -2px"
+               @click="openProductLimitedDialog = false"></i>
+          </div>
+          <img
+              :src="randomProduct.image"
+              alt="user-happy"
+              class="w-full h-full border-round-top-xl"
+              style="object-fit: cover; object-position: 0 0;"
+          />
         </div>
+      </template>
+      <div class="flex flex-column gap-3 mt-3 relative px-4">
+        <div class="flex justify-content-between">
+          <div class="text-lg font-semibold">{{ randomProduct.name }}</div>
+          <div class="text-lg">{{ randomProduct.price }}€</div>
 
-        <ProductListItem
-            :product="randomProduct"
-            button-color="primary"
-            buttonLabel="Retirer"
-            view
+        </div>
+        <div>{{ randomProduct.description }}</div>
+        <Comments :product="randomProduct" class="-mx-4"/>
+      </div>
+      <div class="flex justify-content-evenly px-4 py-2 w-full mt-1 sticky bottom-0 mb-2 bg-white">
+        <Button
+            class="w-full border-round-3xl px-2 py-2 border-gray-400 border-1"
+            label="Ajouter au panier"
+            severity="primary"
+            @click="handleAddProduct()"
         />
-
-        <Button class="w-full" label="Continuer" @click="handleAddProduct"/>
       </div>
     </Dialog>
   </div>

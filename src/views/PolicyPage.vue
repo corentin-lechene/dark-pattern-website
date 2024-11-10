@@ -3,7 +3,6 @@
 import {ref} from "vue";
 
 const hasSubscription = ref(true);
-const openSubscriptionSettingsModal = ref(false);
 
 </script>
 
@@ -49,53 +48,11 @@ const openSubscriptionSettingsModal = ref(false);
       <li>Vous opposer à certains traitements de vos données</li>
     </ul>
 
-    <div v-if="hasSubscription" class="text-2xl">6. Gestion de mon abonnement</div>
-    <div v-if="hasSubscription" class="w-full pb-2">
-      <p>
-        <span class="mr-1">Vous pouvez</span>
-        <span class="mr-1 cursor-pointer font-medium" @click="openSubscriptionSettingsModal = true">gérer</span>
-        <span
-            class="mr-1">votre abonnement à tout moment pour modifier vos préférences et vos informations de paiement.</span>
-      </p>
-      <Button class="w-full" label="Continuer" severity="contrast" @click="$router.push({name: 'Subscription'})"/>
-    </div>
-
-    <div class="text-2xl">7. Modifications de la Politique de Confidentialité</div>
+    <div class="text-2xl">6. Modifications de la Politique de Confidentialité</div>
     <p>
       Nous pouvons mettre à jour cette politique de confidentialité de temps en temps. Nous vous informerons de tout
       changement en publiant la nouvelle politique sur cette page.
     </p>
-
-    <Dialog v-model:visible="openSubscriptionSettingsModal" class="m-4" header="Paramètres" modal style="width: 350px;">
-      <div class="flex flex-column gap-3" style="max-height: 290px;">
-        <div class="flex flex-column gap-2">
-          <div class="text-lg font-semibold">Gestion de votre abonnement</div>
-          <div class="text-sm">
-            Abonnement à 13,99€/mois.
-          </div>
-        </div>
-
-        <div class="flex flex-column gap-2">
-          <div class="text-lg">
-            Grâce à votre abonnement, vous avez accès à des produits exclusifs et des offres spéciales.
-          </div>
-        </div>
-
-        <div class="flex flex-column gap-2">
-          <div class="text-lg font-semibold">Vous souhaitez partir ? Ho non fait pas ça</div>
-          <div class="text-sm">
-            Notre abonnement a été fait pour vous. Vous être prioritaire pour les offres spéciales et les produits.
-            Vous êtes vraiment sur de vouloir partir ?
-          </div>
-          <div class="flex flex-column gap-4 justify-content-end">
-            <Button label="Je ne veux plus" severity="success" @click="openSubscriptionSettingsModal = false"/>
-            <div>
-              <Button label="Oui" severity="danger" size="small" @click="$router.push({name: 'UnSubscribe'})"/>
-            </div>
-          </div>
-        </div>
-      </div>
-    </Dialog>
   </div>
 </template>
 

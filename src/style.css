@@ -20,6 +20,10 @@ body {
     flex: 1;
 }
 
+.p-dialog-content::-webkit-scrollbar {
+    display: none !important;
+}
+
 .vue-flow__controls {
     border: 1px solid #FFFFFB
 }

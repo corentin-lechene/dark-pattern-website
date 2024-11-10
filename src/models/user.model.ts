@@ -5,6 +5,7 @@ export interface User {
     email: string
     password: string
     hasSubscription: boolean
+    subscription: 'free' | 'plus' | 'premium'
     shareData: boolean
     newsletter: boolean
     subscriptionRenew: boolean

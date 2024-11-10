@@ -2,18 +2,23 @@
 import {onMounted, ref} from "vue";
 import {useRouter} from "vue-router";
 import NotificationPopup from "@/components/NotificationPopup.vue";
+import {useUserStore} from "@/stores/user.store";
 
 const router = useRouter();
+const userStore = useUserStore();
 
 const videoRef = ref<HTMLVideoElement | null>(null);
-const isFirstTime = ref(false);
-const isStarted = ref(true);
+const isStarted = ref(!userStore.isFirstTime);
 
 const startVideo = () => {
   if (videoRef.value) {
+    videoRef.value.addEventListener("ended", () => {
+      userStore.isFirstTime = false;
+      router.push({name: "Login"});
+    });
+
     videoRef.value.play().then(() => {
       isStarted.value = true;
-      console.log("Vidéo démarrée");
       document.removeEventListener("click", startVideo);
     }).catch((error) => {
       console.error("Erreur lors du démarrage de la vidéo :", error);
@@ -22,20 +27,19 @@ const startVideo = () => {
 };
 
 onMounted(() => {
-  if (videoRef.value) {
-    videoRef.value.addEventListener("ended", () => {
-      isFirstTime.value = false;
-      router.push({name: "Login"});
-    });
-  }
+  document.addEventListener("click", startVideo);
+});
 
+addEventListener("storage", () => {
+  userStore.resetApp();
+  isStarted.value = false;
   document.addEventListener("click", startVideo);
 });
 </script>
 
 <template>
   <div class="flex justify-content-center align-items-center h-full w-full relative">
-    <div v-if="!isFirstTime" class="h-full w-full relative bg-white" style="max-width: 500px">
+    <div v-if="!userStore.isFirstTime" class="h-full w-full relative bg-white" style="max-width: 500px">
       <Toast
           :base-z-index="9999"
           :pt="{root: {style: {top: '3vh'}}}"
@@ -45,7 +49,7 @@ onMounted(() => {
       <router-view></router-view>
     </div>
     <div v-else
-         class="flex flex-column justify-content-center align-items-center h-full w-full relative overflow-x-hidden"
+         class="flex flex-column justify-content-center align-items-center h-full w-full relative overflow-x-hidden cursor-pointer"
          style="max-width: 449px">
       <video
           ref="videoRef"

@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Adventure",
+    "image": "https://cdn.pixabay.com/photo/2017/07/10/17/55/climb-2490802_1280.jpg",
+    "description": "Experience thrilling outdoor activities and breathtaking nature escapes."
+  },
+  {
+    "name": "Decor",
+    "image": "https://cdn.pixabay.com/photo/2017/08/12/14/05/dragon-2634391_1280.jpg",
+    "description": "Unique and stylish items to enhance your home and garden ambiance."
+  },
+  {
+    "name": "Art",
+    "image": "https://cdn.pixabay.com/photo/2016/06/05/23/13/random-1438434_1280.png",
+    "description": "Explore our collection of art pieces, from modern abstracts to classic prints."
+  },
+  {
+    "name": "Garden",
+    "image": "https://cdn.pixabay.com/photo/2014/02/06/18/35/fountain-260307_1280.jpg",
+    "description": "Beautiful items to bring character and tranquility to any garden space."
+  },
+  {
+    "name": "Jewelry",
+    "image": "https://images.pexels.com/photos/3495488/pexels-photo-3495488.jpeg",
+    "description": "Handcrafted and elegant pieces that add a personal touch to any look."
+  }
+]

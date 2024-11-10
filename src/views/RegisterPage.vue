@@ -3,9 +3,11 @@
 import {ref} from "vue";
 import {useUserStore} from "@/stores/user.store";
 import {useRouter} from "vue-router";
+import {useObjectiveStore} from "@/stores/objective.store";
 
 const router = useRouter()
 const userStore = useUserStore();
+const objectiveStore = useObjectiveStore();
 
 const email = ref('')
 const password = ref('')
@@ -34,12 +36,13 @@ function handleRegister() {
 
   try {
     userStore.register(
-        email.value,
+        email.value.trim().toLowerCase(),
         password.value,
         !newsletter.value,
         shareData.value
     );
 
+    objectiveStore.registered();
     router.push({name: 'Login'})
   } catch (e) {
     error.value = e.message as string
@@ -64,12 +67,12 @@ function handleRegister() {
 
       <div class="flex flex-column gap-2 w-full">
         <div class="text-lg">Adresse email</div>
-        <InputText v-model="email" label="Email" placeholder="john.doe@email.fr"/>
+        <InputText v-model="email" label="Email" placeholder="john.doe@email.fr" type="email"/>
       </div>
 
       <div class="flex flex-column gap-2 w-full">
         <div class="text-lg">Mot de passe</div>
-        <InputText v-model="password" label="Mot de passe" placeholder="***********"/>
+        <Password v-model="password" label="Mot de passe" placeholder="***********"/>
       </div>
 
       <div class="flex flex-column gap-2 w-full">
@@ -91,7 +94,7 @@ function handleRegister() {
 
       <div class="text-sm">
         <span class="mr-1 text-gray-800">Déjà un compte ?</span>
-        <span class="text-blue-500" @click="$router.push({name: 'Login'})">Connectez-vous</span>
+        <span class="text-blue-500 cursor-pointer" @click="$router.push({name: 'Login'})">Connectez-vous</span>
       </div>
 
       <div class="text-xs absolute text-center" style="bottom: 20px">
