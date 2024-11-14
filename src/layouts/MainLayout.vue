@@ -28,7 +28,7 @@ const needBackButton = ref([
 
 const allObjectives = computed(() => [
   {
-    succeed: objectiveStore.objectives[userStore.currentUser?.email || ''].includes(ObjectiveType.REGISTERED) && objectiveStore.objectives[userStore.currentUser?.email || ''].includes(ObjectiveType.LOGGED),
+    succeed: objectiveStore.objectives[userStore.currentUser?.email || ''].includes(ObjectiveType.REGISTERED),
     color: 'gray-200',
     subtitle: "S'inscrire et se connecter",
     title: 'Inscription'
@@ -96,11 +96,9 @@ function addObjectives() {
       displayedObjectives.value.push(objective);
 
       if (index === allObjectives.value.length - 1) {
-
-
-        // if (displayedObjectives.value.every(obj => obj.succeed || (obj.color === 'orange-200' && !obj.succeed))) {
+        if (displayedObjectives.value.every(obj => obj.succeed || (obj.color === 'orange-200' && !obj.succeed))) {
           show.value = true;
-        // }
+        }
       }
     }, index * 300);
   });
@@ -145,6 +143,14 @@ function addObjectives() {
     </div>
     <div class="p-3">
       <transition-group name="list" tag="div">
+        <div class="px-3 flex flex-column gap-2 mt-3">
+          <div v-if="show" class="font-medium">Vous avez fini tous les objectifs. Maintenant vous pouvez passer au
+            questionnaire.
+          </div>
+          <Button v-if="show" class="w-full border-round-3xl px-4 py-3" label="Répondre aux questions"
+                  severity="success" @click="openObjectiveModal = false; $router.push({name: 'Questions'})"/>
+        </div>
+
         <ObjectiveCard
             v-for="(objective, index) in displayedObjectives"
             :key="index"
@@ -154,14 +160,6 @@ function addObjectives() {
             :title="objective.title"
             class="m-2"
         />
-
-        <div class="px-3 flex flex-column gap-2 mt-3">
-          <div v-if="show" class="font-medium">Vous avez fini tous les objectifs. Maintenant vous pouvez passer au
-            questionnaire.
-          </div>
-          <Button v-if="show" class="w-full border-round-3xl px-4 py-3" label="Répondre aux questions"
-                  severity="success" @click="openObjectiveModal = false; $router.push({name: 'Questions'})"/>
-        </div>
       </transition-group>
     </div>
   </Dialog>
