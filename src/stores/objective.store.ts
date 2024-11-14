@@ -40,8 +40,6 @@ export const useObjectiveStore = defineStore('objective', {
             this.objectives[this.getEmail()].push(ObjectiveType.REGISTERED);
         },
         logged() {
-            console.log(this.getEmail())
-            console.log(this.objectives)
             if (!this.objectives[this.getEmail()]) {
                 this.objectives[this.getEmail()].push(ObjectiveType.LOGGED);
             }
