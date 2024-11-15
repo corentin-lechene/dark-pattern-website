@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 
-import {ref} from "vue";
+import {onMounted, ref} from "vue";
 import {useCartStore} from "@/stores/cart.store";
 import {useToast} from "primevue/usetoast";
-import {NotificationsService} from "@/services/notifications.service";
 import {useUserStore} from "@/stores/user.store";
+import dayjs from "dayjs/esm/index.js";
 
 const userStore = useUserStore();
 const cartStore = useCartStore();
@@ -51,16 +51,20 @@ const items = ref({
 })
 
 const steps = ref([15, 25, 35, 45, 95]);
+const timer = ref('');
 
-function notif() {
-  toast.add({severity: 'success', summary: 'Produit ajouté au panier', life: 3000});
-  setTimeout(() => {
-    NotificationsService.show({
-      title: "Vos produits vous attend",
-      message: "N'oublier pas de valider votre panier, les produits sont limités !",
-    })
-  }, 10000)
-}
+onMounted(() => {
+  if (userStore.startTime !== null) {
+    setInterval(() => {
+      if (!userStore.endTime) {
+        //format : mm:ss using dayjs
+        const seconds = dayjs().diff(dayjs(userStore.startTime), 'second');
+        const minutes = Math.floor(seconds / 60);
+        timer.value = `${minutes}:${seconds - minutes * 60}`;
+      }
+    }, 1000);
+  }
+})
 </script>
 
 <template>
@@ -70,9 +74,13 @@ function notif() {
         <img alt="App Logo" class="w-2 h-2" src="@/assets/logo.png"/>
         <div class="font-semibold text-xl">Appli</div>
       </div>
-      <div class="">
+      <div class="relative">
         <i class="pi pi-flag text-xl mr-2 bg-gray-200 p-3 cursor-pointer" style="border-radius: 100%"
            @click="$emit('onOpenObjective')"></i>
+        <div v-if="userStore.startTime && !userStore.endTime"
+             class="absolute top-0 right-0 bg-white border-1 border-gray-400 border-round-xl px-2 py-1 text-xs -mt-3">
+          {{ timer }}
+        </div>
       </div>
     </div>
     <div v-else class="flex gap-3 align-items-center text-2xl w-full">

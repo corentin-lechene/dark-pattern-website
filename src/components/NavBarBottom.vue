@@ -57,7 +57,7 @@ function handleFinishPay() {
 }
 
 function handleAddProduct() {
-  cartStore.addProduct(useUserStore().currentUser?.autoInsurance || true);
+  cartStore.addProduct(useUserStore().currentUser?.autoInsurance || false);
   notif();
   objectiveStore.addedArticle();
 }

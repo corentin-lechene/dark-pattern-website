@@ -15,6 +15,8 @@ const objectiveStore = useObjectiveStore();
 const openObjectiveModal = ref(false);
 const show = ref(false);
 
+const endTime = ref("");
+
 const needBackButton = ref([
   'Product',
   'Products',
@@ -82,6 +84,12 @@ const displayedObjectives = ref<typeof allObjectives>([]);
 function handleOpenObjective() {
   removeObjectives();
   addObjectives();
+  if (userStore.endTime) {
+    //format : mm:ss using dayjs
+    const seconds = dayjs(userStore.endTime).diff(dayjs(userStore.startTime), 'second');
+    const minutes = Math.floor(seconds / 60);
+    endTime.value = `${minutes}:${seconds - minutes * 60} minutes`;
+  }
   openObjectiveModal.value = true;
 }
 
@@ -147,6 +155,7 @@ function addObjectives() {
           <div v-if="show" class="font-medium">Vous avez fini tous les objectifs. Maintenant vous pouvez passer au
             questionnaire.
           </div>
+          <div>Vous avez réussi à vous désabonner en {{ endTime }}.</div>
           <Button v-if="show" class="w-full border-round-3xl px-4 py-3" label="Répondre aux questions"
                   severity="success" @click="openObjectiveModal = false; $router.push({name: 'Questions'})"/>
         </div>

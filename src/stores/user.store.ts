@@ -10,6 +10,8 @@ export const useUserStore = defineStore('user', {
             currentUser: null as User | null,
             isAuthenticated: false,
             isFirstTime: true,
+            startTime: null as null | Date,
+            endTime: null as null | Date,
 
             step: 0,
             users: [] as User[]
@@ -18,7 +20,7 @@ export const useUserStore = defineStore('user', {
     getters: {
         hasSubscription(): boolean {
             return this.currentUser?.hasSubscription || false;
-        }
+        },
     },
     persist: true,
     actions: {
@@ -75,7 +77,8 @@ export const useUserStore = defineStore('user', {
             this.currentUser = user;
             this.isAuthenticated = true;
             this.step = 0;
-
+            this.startTime = null;
+            this.endTime = null;
             objectiveStore.init(user.email);
         },
 
@@ -90,6 +93,7 @@ export const useUserStore = defineStore('user', {
                 this.currentUser.hasSubscription = false;
                 this.currentUser.subscription = 'free';
                 this.step = 0;
+                this.endTime = new Date();
             }
         },
 
@@ -99,6 +103,8 @@ export const useUserStore = defineStore('user', {
             this.currentUser = null;
             this.isAuthenticated = false;
             this.isFirstTime = true;
+            this.startTime = null;
+            this.endTime = null;
             this.users = [];
 
             const cart = useCartStore();
