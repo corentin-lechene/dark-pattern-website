@@ -22,6 +22,9 @@ const randomProduct: Product = products[Math.floor(Math.random() * products.leng
 const canClose = ref(false);
 
 function handleOpenProductLimitedDialog() {
+  const _25percentChance = Math.random() < 0.15;
+  if (!_25percentChance) return;
+
   toast.add({
     severity: "info",
     summary: "Produit limité",
@@ -34,7 +37,7 @@ function handleOpenProductLimitedDialog() {
 
   setTimeout(() => {
     canClose.value = true;
-  }, 5000);
+  }, 7500);
 }
 
 onMounted(() => handleOpenProductLimitedDialog());
@@ -45,6 +48,11 @@ function handleAddProduct() {
   objectiveStore.addedArticle();
   openProductLimitedDialog.value = false;
 }
+
+function handleOpenLink() {
+  window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank');
+}
+
 </script>
 
 <template>
@@ -71,7 +79,7 @@ function handleAddProduct() {
         style="width: 425px;"
     >
       <template #header>
-        <div class="w-full h-15rem relative" style="border-radius: 30px">
+        <div class="w-full h-16rem relative" style="border-radius: 30px">
           <div
               v-if="canClose"
               class="flex align-items-center absolute top-0 right-0 m-2 border-round-3xl bg-gray-400"
@@ -81,10 +89,11 @@ function handleAddProduct() {
                @click="openProductLimitedDialog = false"></i>
           </div>
           <img
-              :src="randomProduct.image"
+              class="w-full h-full border-round-top-xl mb-4"
               alt="user-happy"
-              class="w-full h-full border-round-top-xl"
+              src="@/assets/images/pub.png"
               style="object-fit: cover; object-position: 0 0;"
+              @click="handleOpenLink()"
           />
         </div>
       </template>
@@ -110,9 +119,4 @@ function handleAddProduct() {
 </template>
 
 <style scoped>
-.timer {
-  font-size: 1.2em;
-  font-weight: bold;
-  color: #e74c3c; /* Couleur pour indiquer un compte à rebours */
-}
 </style>
