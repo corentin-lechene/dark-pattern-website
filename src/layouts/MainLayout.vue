@@ -144,9 +144,8 @@ function addObjectives() {
     <div class="flex flex-column gap-1">
       <div class="text-2xl text-center font-medium">Objectifs</div>
       <div class="flex flex-column gap-2 w-full">
-        <div class="text-center text-gray-600 px-5">Voici la liste des objectifs à réaliser pour compléter votre
-          parcours.
-        </div>
+        <div class="text-gray-600 px-5">Voici la liste des objectifs à réaliser pour compléter votre parcours.</div>
+        <div class="text-gray-600 px-5">Une fois fini vous aurez un questionnaire à remplir.</div>
       </div>
     </div>
     <div class="p-3">
@@ -155,7 +154,7 @@ function addObjectives() {
           <div v-if="show" class="font-medium">Vous avez fini tous les objectifs. Maintenant vous pouvez passer au
             questionnaire.
           </div>
-          <div>Vous avez réussi à vous désabonner en {{ endTime }}.</div>
+          <div v-if="userStore.endTime">Vous avez réussi à vous désabonner en {{ endTime }}.</div>
           <Button v-if="show" class="w-full border-round-3xl px-4 py-3" label="Répondre aux questions"
                   severity="success" @click="openObjectiveModal = false; $router.push({name: 'Questions'})"/>
         </div>
