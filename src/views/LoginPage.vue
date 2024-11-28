@@ -10,8 +10,8 @@ const router = useRouter()
 const userStore = useUserStore();
 const objectiveStore = useObjectiveStore();
 
-const email = ref('corentin.lechene@orange.fr')
-const password = ref('azertyuiop')
+const email = ref('')
+const password = ref('')
 
 const error = ref('')
 
