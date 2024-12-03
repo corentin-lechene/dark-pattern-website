@@ -12,7 +12,7 @@ const darkPatterns = ref([
   "Prévention de la comparaison",
   "Manipulation émotionnelle",
   "Publicités déguisées",
-  "Fausse rareté",
+  "Fausse pénurie",
   "Fausse preuve sociale",
   "Microtransaction",
   "Fausse urgence",
