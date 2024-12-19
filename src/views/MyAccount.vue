@@ -111,9 +111,14 @@ function handleOpenSubscriptionModal() {
 
     <div v-if="userStore.currentUser?.subscription !== 'free'" class="flex flex-column gap-2">
       <div class="text-2xl pb-2">Mon abonnement</div>
-      <div>Vous avez choisi<span class="text-primary-800 font-semibold px-1 cursor-pointer"
-                                 @click="handleOpenSubscriptionModal()">l'abonnement Premium</span>, vous avez
-        accès à tous nos produits en avant première et à des prix uniques.
+      <div>
+        <span>Vous avez choisi</span>
+        <span
+            class="text-primary-800 font-semibold px-1 cursor-pointer"
+            @click="handleOpenSubscriptionModal()">
+          l'abonnement {{ userStore.currentUser?.subscription === 'premium' ? 'Premium' : 'Plus' }}
+        </span>
+        <span>, vous avez accès à tous nos produits en avant première et à des prix uniques.</span>
       </div>
       <div>Vous pouvez vous désabonner à tout moment dans la section mon abonnement de ton compte.</div>
       <div class="flex justify-content-center">

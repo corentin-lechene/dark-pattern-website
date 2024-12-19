@@ -66,7 +66,7 @@ function submit() {
   const negativeMark = selectedPatterns.value.filter(p => !darkPatternResponse.value.includes(p)).length * -1;
   const positiveMark = selectedPatterns.value.filter(p => darkPatternResponse.value.includes(p)).length;
 
-  const m = selectedPatterns.value.length >= darkPatterns.value.length - 3
+  const m = selectedPatterns.value.length >= darkPatterns.value.length - 1
       ? positiveMark + negativeMark
       : positiveMark;
   mark.value = Math.max(0, m);
