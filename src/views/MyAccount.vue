@@ -153,9 +153,7 @@ function handleOpenSubscriptionModal() {
       </template>
       <div class="flex flex-column gap-3 mt-3 remove-sliderbar" style="">
         <div class="text-lg font-semibold">Votre abonnement</div>
-        <div>Aimer de tous, nos clients adore ce service. Vous êtes actuellement le <span
-            class="text-green-700 font-semibold">{{ counter }}</span>ème client à nous faire confiance.
-        </div>
+        <div>Vous allez vous désabonner de notre service.</div>
         <div class="flex justify-content-evenly px-4 w-full">
           <Button
               class="w-full border-round-3xl px-2 py-2 border-gray-400 border-1"
