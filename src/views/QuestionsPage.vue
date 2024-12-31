@@ -29,17 +29,17 @@ const darkPatterns = ref([
   "Dark notifications",
 ]);
 const darkPatternResponse = ref([
-  "Préréglage",
-  "Formulation trompeuse",
-  "Publicités déguisées",
-  "Dark notifications",
-  "Dissimuler des informations",
-  "Interférence visuelle",
-  "Manipulation émotionnelle",
-  "Obstruction",
-  "Difficulté à annuler",
-  "Abonnement caché",
-  "Fausse preuve sociale",
+  "Préréglage", //dans l'inscription et les préférences
+  "Formulation trompeuse", //inscription
+  "Publicités déguisées", //mettre le bouton en avant
+  "Dark notifications", // suppression des notifications
+  "Dissimuler des informations", // supprimer le scroll ou le texte caché
+  "Interférence visuelle", // afficher les boutons au bonnes places
+  "Manipulation émotionnelle", // => arreter les boutouns svp abonnez vous
+  "Obstruction", //bouton visible
+  "Difficulté à annuler", // remplacer par une modale
+  "Abonnement caché", // mettre en avant l'abonnement assurance ou séparer les deux
+  "Fausse preuve sociale", // supprimer le bombre nombre de personnes qui ont acheté
 ]);
 
 const selectedPatterns = ref<string[]>([]);

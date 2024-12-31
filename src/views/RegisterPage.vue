@@ -13,7 +13,7 @@ const email = ref('')
 const password = ref('')
 const cgu = ref(false)
 const newsletter = ref(false)
-const shareData = ref(true)
+const shareData = ref(false)
 
 const error = ref('')
 
@@ -81,7 +81,7 @@ function handleRegister() {
         </div>
         <div class="flex gap-2 align-items-center">
           <Checkbox v-model="newsletter" binary/>
-          <span class="text-sm">Je ne souhaite pas recevoir la <span class="text-blue-500">newsletter</span></span>
+          <span class="text-sm">Je souhaite recevoir la <span class="text-blue-500">newsletter</span></span>
         </div>
         <div class="flex gap-2 align-items-center">
           <Checkbox v-model="shareData" binary/>
