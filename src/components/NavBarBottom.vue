@@ -3,7 +3,6 @@
 import {ref} from "vue";
 import {useToast} from "primevue/usetoast";
 import {useCartStore} from "@/stores/cart.store";
-import {NotificationsService} from "@/services/notifications.service";
 import router from "@/router";
 import {useUserStore} from "@/stores/user.store";
 import {useObjectiveStore} from "@/stores/objective.store";
@@ -35,16 +34,6 @@ const items = ref([
   },
 ])
 
-function notif() {
-  toast.add({severity: 'success', summary: 'Produit ajouté au panier avec l\'assurance', life: 3000});
-  setTimeout(() => {
-    NotificationsService.show({
-      title: "Vos produits vous attend",
-      message: "N'oublier pas de valider votre panier, les produits sont limités !",
-    })
-  }, 10000)
-}
-
 
 function handlePay() {
   toast.add({severity: 'success', summary: 'Paiement effectué avec succès', life: 3000});
@@ -58,7 +47,6 @@ function handleFinishPay() {
 
 function handleAddProduct() {
   cartStore.addProduct(useUserStore().currentUser?.autoInsurance || false);
-  notif();
   objectiveStore.addedArticle();
 }
 

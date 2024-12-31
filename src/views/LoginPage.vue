@@ -2,7 +2,6 @@
 
 import {ref} from "vue";
 import {useRouter} from "vue-router";
-import {NotificationsService} from "@/services/notifications.service";
 import {useUserStore} from "@/stores/user.store";
 import {useObjectiveStore} from "@/stores/objective.store";
 
@@ -28,12 +27,6 @@ function handleLogin() {
 
   try {
     userStore.login(email.value.trim().toLowerCase(), password.value);
-    setTimeout(() => {
-      NotificationsService.show({
-        title: "Bienvenue",
-        message: "Venir découvrir nos produits à prix réduits !"
-      })
-    }, 20000)
     objectiveStore.logged();
     router.push({name: 'Home'})
   } catch (e) {

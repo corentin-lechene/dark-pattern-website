@@ -3,20 +3,9 @@
 import {useUserStore} from "@/stores/user.store";
 import AccountListItem from "@/components/AccountListItem.vue";
 import {useRouter} from "vue-router";
-import {onMounted} from "vue";
-import {NotificationsService} from "@/services/notifications.service";
 
 const router = useRouter();
 const userStore = useUserStore();
-
-onMounted(() => {
-  setTimeout(() => {
-    NotificationsService.show({
-      title: "Ajourd'hui seulement",
-      message: "Profitez de nos produits exclusifs à prix les plus bas"
-    })
-  }, 10000);
-})
 
 function handleLogout() {
   userStore.logout();
