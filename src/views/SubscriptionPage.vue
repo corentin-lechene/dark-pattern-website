@@ -18,6 +18,8 @@ const error = ref<string>('');
 const premium = ref<boolean>(true);
 const plus = ref<boolean>(false);
 
+const openConfirmPremiumModal = ref(false);
+
 const isDisabled = computed(() => cardNumber.value === '' || cardExpiration.value === '' || cardCvc.value === '');
 
 function handleSubscription() {
@@ -61,6 +63,7 @@ function handleChangeSubscription() {
   userStore.currentUser!.subscription = 'premium';
   toast.add({severity: 'success', summary: 'Abonnement changé', detail: 'Tu as changé d\'abonnement avec succès'});
   objectiveStore.subscribed('premium');
+  openConfirmPremiumModal.value = false;
 }
 
 </script>
@@ -244,24 +247,23 @@ function handleChangeSubscription() {
 
     <Divider/>
 
-    <div v-if="userStore.currentUser?.subscription === 'plus'">
-      <div>Vous avez choisi l'abonnement Plus, vous avez accès à nos produits en avant première et à des prix uniques.
-      </div>
-      <div>Vous pouvez vous désabonner à tout moment dans la section mon abonnement de ton compte.</div>
-      <Button
-          class="gradient-bg-primary mt-2"
-          label="Ton expérience mérite le meilleur, change d'abonnement dés maintenant !"
-          severity="success"
-          @click="handleChangeSubscription()"
-      />
-    </div>
-    <div v-else>
-      <div class="text-lg font-semibold py-2">
-        Tu possède le meilleur abonnement que nous proposons. Regarde ci-dessous les produits que tu pourrais avoir.
-      </div>
-    </div>
-
+    <Button
+        v-if="userStore.currentUser?.subscription === 'plus'"
+        class="gradient-bg-primary mt-2"
+        label="Passer à l'abonnement premium !"
+        severity="success"
+        @click="openConfirmPremiumModal = true"
+    />
     <ProductsForYou class="-mx-4 mt-4"/>
+
+    <Dialog v-model:visible="openConfirmPremiumModal" :style="{width: '30rem'}" header="Souhaitez-vous continuer ?"
+            modal
+            position="bottom">
+      <div class="w-full flex flex-column gap-2">
+        <div>Vous allez passer à l'abonnement premium</div>
+        <Button class="w-full" label="Confirmer" @click="handleChangeSubscription()"/>
+      </div>
+    </Dialog>
   </div>
 </template>
 

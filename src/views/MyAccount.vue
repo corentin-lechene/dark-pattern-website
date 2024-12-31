@@ -113,17 +113,15 @@ function handleOpenSubscriptionModal() {
       <div class="text-2xl pb-2">Mon abonnement</div>
       <div>
         <span>Vous avez choisi</span>
-        <span
-            class="text-primary-800 font-semibold px-1 cursor-pointer"
-            @click="handleOpenSubscriptionModal()">
+        <span>
           l'abonnement {{ userStore.currentUser?.subscription === 'premium' ? 'Premium' : 'Plus' }}
         </span>
         <span>, vous avez accès à tous nos produits en avant première et à des prix uniques.</span>
       </div>
       <div>Vous pouvez vous désabonner à tout moment dans la section mon abonnement de ton compte.</div>
       <div class="flex justify-content-center">
-        <Button class="w-full border-round-3xl border-1 border-gray-400" label="Voir mon abonnement"
-                severity="secondary" style="padding: 10px 20px;" @click="$router.push({name: 'Subscription'})"/>
+        <Button class="w-full border-round-3xl border-1 border-gray-400" label="Se désabonner"
+                severity="secondary" style="padding: 10px 20px;" @click="handleOpenSubscriptionModal()"/>
       </div>
     </div>
 
@@ -157,9 +155,6 @@ function handleOpenSubscriptionModal() {
         <div class="text-lg font-semibold">Votre abonnement</div>
         <div>Aimer de tous, nos clients adore ce service. Vous êtes actuellement le <span
             class="text-green-700 font-semibold">{{ counter }}</span>ème client à nous faire confiance.
-        </div>
-        <div>Grâce à ce service rien que pour vous, vous pourrez profiter de nos offres exclusives et de nos
-          promotions.
         </div>
         <div class="flex justify-content-evenly px-4 w-full">
           <Button
