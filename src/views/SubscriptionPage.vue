@@ -207,7 +207,7 @@ function handleChangeSubscription() {
       Nous ne stockons pas vos informations de paiement.
     </div>
 
-    <div :class="{'text-primary-100': premium, 'text-red-100': plus}" class="text-xs text-center mt-8">
+    <div class="text-xs text-center mt-2">
       En cliquant sur "Souscrire", vous acceptez de s'abonner à notre service en ligne d'une durée de 2 ans. Des frais
       de dossier peuvent s'appliquer pour l'abonnement Plus à hauteur de 7€.
     </div>
