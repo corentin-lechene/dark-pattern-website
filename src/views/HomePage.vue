@@ -19,12 +19,8 @@ const toast = useToast();
 
 const openProductLimitedDialog = ref(false);
 const randomProduct: Product = products[Math.floor(Math.random() * products.length)];
-const canClose = ref(false);
 
 function handleOpenProductLimitedDialog() {
-  const _25percentChance = Math.random() < 0.15;
-  if (!_25percentChance) return;
-
   toast.add({
     severity: "info",
     summary: "Produit limité",
@@ -34,10 +30,6 @@ function handleOpenProductLimitedDialog() {
   });
   userStore.isFirstTime = false;
   openProductLimitedDialog.value = true;
-
-  setTimeout(() => {
-    canClose.value = true;
-  }, 7500);
 }
 
 onMounted(() => handleOpenProductLimitedDialog());
@@ -81,12 +73,11 @@ function handleOpenLink() {
       <template #header>
         <div class="w-full h-16rem relative" style="border-radius: 30px">
           <div
-              v-if="canClose"
               class="flex align-items-center absolute top-0 right-0 m-2 border-round-3xl bg-gray-400"
+              @click="openProductLimitedDialog = false"
           >
             <div class="pl-3 text-white">Fermer</div>
-            <i class="pi pi-times text-white p-2 text-sm cursor-pointer" style="margin-bottom: -2px"
-               @click="openProductLimitedDialog = false"></i>
+            <i class="pi pi-times text-white p-2 text-sm cursor-pointer" style="margin-bottom: -2px"></i>
           </div>
           <img
               class="w-full h-full border-round-top-xl mb-4"
