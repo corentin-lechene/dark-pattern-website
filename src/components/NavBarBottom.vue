@@ -4,7 +4,6 @@ import {ref} from "vue";
 import {useToast} from "primevue/usetoast";
 import {useCartStore} from "@/stores/cart.store";
 import router from "@/router";
-import {useUserStore} from "@/stores/user.store";
 import {useObjectiveStore} from "@/stores/objective.store";
 
 const cartStore = useCartStore();
@@ -46,7 +45,7 @@ function handleFinishPay() {
 }
 
 function handleAddProduct() {
-  cartStore.addProduct(useUserStore().currentUser?.autoInsurance || false);
+  cartStore.addProduct(false);
   objectiveStore.addedArticle();
 }
 
