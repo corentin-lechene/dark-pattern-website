@@ -29,17 +29,17 @@ const darkPatterns = ref([
   "Dark notifications",
 ]);
 const darkPatternResponse = ref([
+  "Préréglage",
+  "Formulation trompeuse",
+  "Publicités déguisées",
+  "Dark notifications",
+  "Dissimuler des informations",
+  "Interférence visuelle",
   "Manipulation émotionnelle",
-  "Fausse preuve sociale",
+  "Obstruction",
   "Difficulté à annuler",
   "Abonnement caché",
-  "Obstruction",
-  "Préréglage",
-  "Dissimuler des informations",
-  "Formulation trompeuse",
-  "Interférence visuelle",
-  "Dark notifications",
-  "Publicités déguisées",
+  "Fausse preuve sociale",
 ]);
 
 const selectedPatterns = ref<string[]>([]);
