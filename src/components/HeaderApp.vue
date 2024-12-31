@@ -38,7 +38,7 @@ defineProps({
 const items = ref({
   Home: 'Accueil',
   Subscription: 'Abonnement',
-  UnSubscribe: 'Abonnement',
+  UnSubscribe: 'Désabonnement',
   UnsubscribeSuccess: 'Désabonnement réussi',
   Cart: 'Panier',
   Account: 'Compte',
@@ -88,12 +88,7 @@ onMounted(() => {
         <i class="pi pi-chevron-left"></i>
       </div>
 
-      <div v-if="$route.name === 'UnSubscribe'" class="flex justify-content-center w-full">
-        <div class="progress-bar -ml-7">
-          <div :style="{width: `${steps[userStore.step]}%`}" class="progress-bar-fill"></div>
-        </div>
-      </div>
-      <div v-else :class="{'text-center': backBtn}" class="w-full mr-6">{{
+      <div :class="{'text-center': backBtn}" class="w-full mr-6">{{
           title in items ? items[title] : title
         }}
       </div>

@@ -2,9 +2,12 @@
 
 import {ref} from "vue";
 import {useToast} from "primevue/usetoast";
+import {useRouter} from "vue-router";
+import {useUserStore} from "@/stores/user.store";
 
-const emit = defineEmits(['next']);
 const toasts = useToast();
+const router = useRouter();
+const userStore = useUserStore();
 
 const selectedReason = ref<string>('');
 const selectedXp = ref<string>('');
@@ -29,13 +32,14 @@ const xps = ref([
   {label: 'Très mauvaise', value: 'very_bad'},
 ])
 
-function handleNext() {
+function unsubscribeUser() {
   if (!selectedReason.value || !selectedXp.value || !advice.value || !deception.value) {
     toasts.add({severity: 'error', summary: 'Veuillez remplir les champs obligatoires', life: 3000});
     return;
   }
 
-  emit('next');
+  userStore.unsubscribe();
+  router.push({name: 'UnsubscribeSuccess'});
 }
 
 </script>
@@ -44,9 +48,9 @@ function handleNext() {
   <div class="content flex flex-column align-items-center p-4 overflow-y-scroll"
        style="min-height: 85%; gap: 0.55em">
 
-    <div class="text-3xl text-center font-medium mt-4">Vous voulez déjà partir ?</div>
+    <div class="text-3xl text-center font-medium mt-4">Avant de partir</div>
     <div class="flex flex-column">
-      <div class="text-center text-gray-600">Nous sommes triste de l'apprendre !</div>
+      <div class="text-center text-gray-600">Pourriez-vous prendre quelques instants pour nous donner votre avis ?</div>
 
       <div class="flex flex-column gap-4 mt-4">
         <div class="flex flex-column gap-2">
@@ -72,7 +76,7 @@ function handleNext() {
         <div class="flex w-full gap-4">
           <Button class="w-full border-1 border-gray-400" label="Finalement non" severity="secondary"
                   @click="$router.push({name: 'Home'})"/>
-          <Button class="w-10rem" label="Continuer" @click="handleNext()"/>
+          <Button class="w-10rem" label="Continuer" @click="unsubscribeUser()"/>
         </div>
       </div>
     </div>
