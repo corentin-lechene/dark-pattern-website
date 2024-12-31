@@ -23,7 +23,6 @@ function handleRegister() {
     return
   }
 
-  //todo add type=password in input
   if (password.value.length < 8) {
     error.value = "Le mot de passe doit contenir au moins 8 caractères"
     return
